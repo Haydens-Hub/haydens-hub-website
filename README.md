@@ -20,7 +20,7 @@ This website was built using **[Astro](https://astro.build)** for its component-
 
 ```
 haydens-hub-website/
-├── deeply-debris/              # Astro project root
+├── haydens-hub/                # Astro project root
 │   ├── public/                 # Static assets (images, scripts)
 │   │   ├── assets/
 │   │   └── scripts/script.js

@@ -97,3 +97,58 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/* Table styles */
+.resource-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.resource-table th {
+    position: sticky;
+    z-index: 10;
+    background-color: #5D8DCD;
+}
+
+thead tr:first-child th {
+    padding-top: 1.5rem; /* extra top spacing */
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0.125rem;
+}
+
+.tag-free {
+    background-color: #B9E185;
+    color: #3F493D;
+}
+
+.tag-low {
+    background-color: #CDD6FF;
+    color: #3F493D;
+}
+
+.tag-high {
+    background-color: #E6CFB8;
+    color: #3F493D;
+}
+
+.tag-wheelchair {
+    background-color: #5D8DCD;
+    color: white;
+}
+
+.tag-virtual {
+    background-color: #3E87B0;
+    color: white;
+}
+
+.filter-active {
+    background-color: #D43F29;
+    color: white;
+}
