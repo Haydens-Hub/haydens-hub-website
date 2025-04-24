@@ -1,0 +1,469 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Hayden's Hub - Supporting Youth with Special Needs">
+  <Header />
+  
+  <main id="main-content">
+            <!-- Hero Section -->
+        <section id="home" class="bg-primary text-white py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Social Prescribing Hub for Youth with Special Needs</h1>
+                        <p class="text-xl md:text-2xl mb-8">Connecting families, resources, and communities in Ottawa</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#contact" class="bg-accent hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors text-center text-lg">Contact Us</a>
+                            <a href="resources.html" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg transition-colors text-center text-lg">Explore Resources</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-full max-w-md bg-white/20 rounded-lg border-2 border-white/30 overflow-hidden">
+                            <img src="/assets/GettyImages-466172112.jpg" alt="Child with painted hands" class="w-full h-auto object-cover">
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-olive">Welcome to Hayden's Hub</h2>
+                    <p class="text-lg md:text-xl mb-8">We are a community organization dedicated to supporting youth with special needs and their caregivers in Ottawa. Through resources, advocacy, and connection, we aim to create a more inclusive and supportive environment for all.</p>
+                    <div class="flex flex-wrap md:flex-nowrap justify-center gap-4">
+                        <div class="bg-cream p-6 rounded-lg text-center w-full md:w-1/3 max-w-xs">
+                            <svg class="w-12 h-12 mx-auto mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L1 12H4V21H20V12H23L12 2Z" fill="#5D8DCD"></path>
+                            </svg>
+                            <h3 class="text-xl font-bold mb-2">Resources</h3>
+                            <p>Access tools and information for caregivers and youth</p>
+                        </div>
+                        <div class="bg-lightBlue p-6 rounded-lg text-center w-full md:w-1/3 max-w-xs">
+                            <svg class="w-12 h-12 mx-auto mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 8H17V6C17 3.24 14.76 1 12 1C9.24 1 7 3.24 7 6V8H6C4.9 8 4 8.9 4 10V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V10C20 8.9 19.1 8 18 8Z" fill="#3E87B0"></path>
+                            </svg>
+                            <h3 class="text-xl font-bold mb-2">Advocacy</h3>
+                            <p>Supporting rights and inclusion for all youth</p>
+                        </div>
+                        <div class="bg-green p-6 rounded-lg text-center w-full md:w-1/3 max-w-xs">
+                            <svg class="w-12 h-12 mx-auto mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z" fill="#D43F29"></path>
+                            </svg>
+                            <h3 class="text-xl font-bold mb-2">Connection</h3>
+                            <p>Building community and support networks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 bg-green">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-olive">About Us</h2>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+                        <h3 class="text-2xl font-bold mb-4 text-primary">Our Founding Story</h3>
+                        <p class="text-lg mb-6">Hayden's Hub was founded in 2022 by a group of parents and caregivers who recognized the need for better support systems for youth with special needs in Ottawa. After experiencing firsthand the challenges of navigating resources and services, they came together to create a centralized hub of information and community support.</p>
+                        <p class="text-lg">Named after Hayden, a young person whose journey inspired our founders, our organization has grown into a vital resource for families across the Ottawa region.</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">Our Mission</h3>
+                            <p class="text-lg">To empower youth with special needs and their caregivers through accessible resources, community connection, and advocacy for inclusive practices in Ottawa.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">Our Vision</h3>
+                            <p class="text-lg">A community where all youth with special needs have equal opportunities to thrive, connect, and access the support they need to reach their full potential.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-olive">Our Team</h2>
+                
+                <div class="max-w-3xl mx-auto mb-12">
+                    <p class="text-lg text-center">Meet the dedicated individuals who make Hayden's Hub possible. Our team brings together diverse experiences and a shared commitment to supporting youth with special needs.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+                    <!-- Team Member 1 -->
+                    <div class="team-card bg-grey rounded-lg overflow-hidden shadow-md">
+                        <div class="flex flex-row">
+                            <div class="team-avatar bg-primary w-1/2 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="w-1/2 p-4">
+                                <h3 class="text-base font-bold mb-0.5">Sarah Johnson</h3>
+                                <p class="text-primary font-medium text-xs mb-1">Executive Director</p>
+                                <p class="text-xs text-gray-600 mb-2">10+ years in nonprofit leadership</p>
+                                <div class="flex space-x-2">
+                                    <a href="#" aria-label="LinkedIn profile" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-label="Email" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="team-card bg-grey rounded-lg overflow-hidden shadow-md">
+                        <div class="flex flex-row">
+                            <div class="team-avatar bg-accent w-1/2 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="w-1/2 p-4">
+                                <h3 class="text-base font-bold mb-0.5">Michael Chen</h3>
+                                <p class="text-primary font-medium text-xs mb-1">Resource Coordinator</p>
+                                <p class="text-xs text-gray-600 mb-2">Passionate about accessible resources</p>
+                                <div class="flex space-x-2">
+                                    <a href="#" aria-label="LinkedIn profile" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-label="Email" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="team-card bg-grey rounded-lg overflow-hidden shadow-md">
+                        <div class="flex flex-row">
+                            <div class="team-avatar bg-olive w-1/2 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="w-1/2 p-4">
+                                <h3 class="text-base font-bold mb-0.5">Amina Patel</h3>
+                                <p class="text-primary font-medium text-xs mb-1">Community Outreach</p>
+                                <p class="text-xs text-gray-600 mb-2">Building bridges across communities</p>
+                                <div class="flex space-x-2">
+                                    <a href="#" aria-label="LinkedIn profile" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-label="Email" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 4 -->
+                    <div class="team-card bg-grey rounded-lg overflow-hidden shadow-md">
+                        <div class="flex flex-row">
+                            <div class="team-avatar bg-blue w-1/2 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="w-1/2 p-4">
+                                <h3 class="text-base font-bold mb-0.5">David Wilson</h3>
+                                <p class="text-primary font-medium text-xs mb-1">Program Director</p>
+                                <p class="text-xs text-gray-600 mb-2">Creating inclusive youth programs</p>
+                                <div class="flex space-x-2">
+                                    <a href="#" aria-label="LinkedIn profile" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-label="Email" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 5 -->
+                    <div class="team-card bg-grey rounded-lg overflow-hidden shadow-md">
+                        <div class="flex flex-row">
+                            <div class="team-avatar bg-green w-1/2 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="w-1/2 p-4">
+                                <h3 class="text-base font-bold mb-0.5">Elena Rodriguez</h3>
+                                <p class="text-primary font-medium text-xs mb-1">Events Coordinator</p>
+                                <p class="text-xs text-gray-600 mb-2">Expert in accessible event planning</p>
+                                <div class="flex space-x-2">
+                                    <a href="#" aria-label="LinkedIn profile" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-label="Email" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 6 -->
+                    <div class="team-card bg-grey rounded-lg overflow-hidden shadow-md">
+                        <div class="flex flex-row">
+                            <div class="team-avatar bg-primary w-1/2 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="w-1/2 p-4">
+                                <h3 class="text-base font-bold mb-0.5">James Thompson</h3>
+                                <p class="text-primary font-medium text-xs mb-1">Volunteer Coordinator</p>
+                                <p class="text-xs text-gray-600 mb-2">Dedicated to community engagement</p>
+                                <div class="flex space-x-2">
+                                    <a href="#" aria-label="LinkedIn profile" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-label="Email" class="text-primary hover:text-accent transition-colors">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Get Involved Section -->
+                <div class="bg-green rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Get Involved</h3>
+                    <p class="text-lg mb-6 text-center">There are many ways to support Hayden's Hub and make a difference in the lives of youth with special needs in our community.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="text-xl font-bold mb-3 text-primary">Volunteer With Us</h4>
+                            <p class="mb-4">We're always looking for dedicated volunteers to help with events, resource coordination, and community outreach.</p>
+                            <a href="#" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">Apply to Volunteer</a>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="text-xl font-bold mb-3 text-accent">Partner With Us</h4>
+                            <p class="mb-4">Organizations and businesses can partner with us to create more inclusive opportunities for youth with special needs.</p>
+                            <a href="#" class="bg-accent hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">Become a Partner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-primary text-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Contact Us</h2>
+                
+                <div class="max-w-3xl mx-auto mb-12">
+                    <p class="text-lg text-center">Have questions or want to learn more about Hayden's Hub? We'd love to hear from you! Reach out using the form below or connect with us on social media.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <div>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-1">Your Name</label>
+                                <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-md text-olive" required="">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+                                <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-md text-olive" required="">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+                                <select id="subject" class="w-full p-3 border border-gray-300 rounded-md text-olive" required="">
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="resources">Resource Information</option>
+                                    <option value="volunteer">Volunteering</option>
+                                    <option value="partnership">Partnership Opportunities</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-1">Your Message</label>
+                                <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded-md text-olive" required=""></textarea>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="bg-accent hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-white text-olive p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold mb-6">Connect With Us</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 text-accent mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                    </svg>
+                                    <div>
+                                        <h4 class="font-bold mb-1">Email</h4>
+                                        <a href="mailto:outreach.haydenshub@gmail.com" class="text-primary hover:text-accent transition-colors">outreach.haydenshub@gmail.com</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 text-accent mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <div>
+                                        <h4 class="font-bold mb-1">Location</h4>
+                                        <p>Ottawa, Ontario, Canada</p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-bold mb-3">Follow Us</h4>
+                                    <div class="flex space-x-4">
+                                        <a href="#" aria-label="Instagram" class="bg-primary hover:bg-blue-700 text-white p-3 rounded-full transition-colors">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                                            </svg>
+                                        </a>
+                                        <a href="#" aria-label="LinkedIn" class="bg-primary hover:bg-blue-700 text-white p-3 rounded-full transition-colors">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                            </svg>
+                                        </a>
+                                        <a href="#" aria-label="Facebook" class="bg-primary hover:bg-blue-700 text-white p-3 rounded-full transition-colors">
+                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-grey">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-olive">Frequently Asked Questions</h2>
+                
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-toggle w-full text-left p-6 focus:outline-none" aria-expanded="false">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-xl font-bold">What is social prescribing?</h3>
+                                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p>Social prescribing connects people to non-medical support in the community to improve their health and wellbeing. It's about linking individuals with local services that can help address their needs in a holistic way.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-toggle w-full text-left p-6 focus:outline-none" aria-expanded="false">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-xl font-bold">How can I access resources through Hayden's Hub?</h3>
+                                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p>You can access our resources in several ways:</p>
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li>Browse our online Resource Directory</li>
+                                    <li>Contact our Resource Coordinator for personalized support</li>
+                                    <li>Attend one of our in-person or virtual information sessions</li>
+                                    <li>Sign up for our newsletter to receive regular updates on new resources</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-toggle w-full text-left p-6 focus:outline-none" aria-expanded="false">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-xl font-bold">Who can volunteer with Hayden's Hub?</h3>
+                                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p>We welcome volunteers from all backgrounds who share our commitment to supporting youth with special needs. Whether you have professional experience in related fields, personal experience as a caregiver, or simply want to contribute to our mission, there are many ways to get involved. All volunteers complete an application process and training to ensure they're well-prepared to support our community.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-toggle w-full text-left p-6 focus:outline-none" aria-expanded="false">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-xl font-bold">Does Hayden's Hub provide direct services?</h3>
+                                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p>While we don't provide clinical or therapeutic services directly, we do offer resource navigation, community events, workshops, and peer support opportunities. Our primary role is to connect youth and families with existing services and supports in the community, advocate for improved access, and create spaces for connection and learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  </main>
+
+  <Footer />
+</Layout>
