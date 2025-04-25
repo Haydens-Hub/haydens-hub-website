@@ -257,3 +257,41 @@ thead tr:first-child th {
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
 }
+
+.article-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #black;
+}
+
+#intro {
+  margin-top: 0rem;
+}
+
+.article-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.article-content ul, .article-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.article-content ul {
+  list-style-type: disc;
+}
+
+.article-content ol {
+  list-style-type: decimal;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
