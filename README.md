@@ -27,7 +27,7 @@ haydens-hub-website/
 │   ├── src/
 │   │   ├── components/         # Header, Footer, etc.
 │   │   ├── layouts/Layout.astro
-│   │   ├── pages/index.astro   # Main page content
+│   │   ├── pages/              # All pages (index, resources, advocacy, etc.)
 │   │   └── styles/global.css   # Tailwind config + custom styles
 │   ├── astro.config.mjs
 │   ├── tailwind.config.js
@@ -42,7 +42,7 @@ haydens-hub-website/
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Astro**: for component-based static site generation
 - **TailwindCSS v3**: for styling (manually downgraded from v4 to resolve conflicts)
@@ -84,7 +84,7 @@ The custom JavaScript for FAQ toggles is included inside `public/scripts/script.
 To run the site locally:
 
 ```bash
-cd deeply-debris
+cd haydens-hub
 npm install
 npm run dev
 ```
@@ -95,7 +95,7 @@ npm run dev
 
 Not done yet
 
-## 📌 Notes
+## Notes
 
 - `tailwind.config.js` must include `content: ["./src/**/*.{astro,html,js,jsx,ts,tsx}"]`
 - Static images are referenced from `/assets/` inside the `public/` folder
@@ -111,4 +111,5 @@ Not done yet
 
 ## License
 
-Not licensed yet
+This project is licensed under the [MIT License](LICENSE.md).  
+All rights reserved © 2025 Hayden's Hub.
