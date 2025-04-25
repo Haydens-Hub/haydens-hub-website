@@ -14,7 +14,11 @@ export default {
         cream: '#E6CFB8',
         blue: '#3E87B0',
         grey: '#EFEBEB',
-        green: '#B9E185'
+        green: '#B9E185',
+        softPink: '#FFD6D6',
+        softPurple: '#E0D6FF',
+        softYellow: '#FFF3D6',
+        softGreen: '#D6FFE0'
       },
       fontFamily: {
         sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],

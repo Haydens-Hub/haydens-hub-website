@@ -1,0 +1,1901 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Advocacy">
+  <Header />
+  
+  <main id="main-content">
+          <!-- Hero Section -->
+      <section class="bg-primary text-white py-12 md:py-16 no-print">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-6">
+              Academic Article Guidelines
+            </h1>
+            <p class="text-xl md:text-2xl mb-10">
+              Comprehensive guidelines for preparing and submitting academic
+              articles to Hayden's Hub advocacy platform
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+              <a
+                href="https://external-submission-form.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-button bg-white text-primary hover:bg-cream font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center min-w-[180px]"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Submit Article
+              </a>
+              <a
+                href="mailto:research@haydenshub.org"
+                class="cta-button bg-accent hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center min-w-[180px]"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                  ></path>
+                  <path
+                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                  ></path>
+                </svg>
+                Contact Research Team
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container mx-auto px-4 py-8 md:py-12">
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Table of Contents Sidebar -->
+          <aside class="md:w-1/4 lg:w-1/5 no-print">
+            <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+              <h2 class="text-xl font-bold mb-4 text-primary">
+                Table of Contents
+              </h2>
+              <nav aria-label="Table of Contents">
+                <ul class="space-y-1">
+                  <li>
+                    <a href="#introduction" class="toc-link">Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#article-types" class="toc-link">Article Types</a>
+                  </li>
+                  <li>
+                    <a href="#submission-process" class="toc-link"
+                      >Submission Process</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#formatting" class="toc-link"
+                      >Formatting Guidelines</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#structure" class="toc-link">Article Structure</a>
+                  </li>
+                  <li>
+                    <a href="#abstract" class="toc-link">Abstract Guidelines</a>
+                  </li>
+                  <li>
+                    <a href="#citations" class="toc-link"
+                      >Citations &amp; References</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#tables-figures" class="toc-link"
+                      >Tables &amp; Figures</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#accessibility" class="toc-link"
+                      >Accessibility Requirements</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#ethical" class="toc-link"
+                      >Ethical Considerations</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#review-process" class="toc-link"
+                      >Review Process</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#publication" class="toc-link"
+                      >Publication Process</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <div class="md:w-3/4 lg:w-4/5">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8 lg:p-10">
+              <section id="introduction" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Introduction
+                </h2>
+                <p class="mb-4 text-lg">
+                  Welcome to Hayden's Hub's academic article guidelines. Our
+                  platform aims to bridge the gap between academic research and
+                  practical application in supporting youth with special needs.
+                  We publish high-quality, evidence-based articles that
+                  contribute to the understanding and advancement of inclusive
+                  practices, interventions, and policies.
+                </p>
+
+                <p class="mb-4">
+                  These guidelines are designed to help authors prepare
+                  manuscripts that align with our mission and meet our
+                  publication standards. By following these guidelines, you will
+                  help ensure that your submission moves smoothly through our
+                  review process and, if accepted, reaches our audience in the
+                  most effective format.
+                </p>
+
+                <div class="bg-softYellow p-6 rounded-lg mb-6">
+                  <h3 class="text-xl font-bold mb-3">
+                    Our Publication Philosophy
+                  </h3>
+                  <p class="mb-2">
+                    At Hayden's Hub, we believe that research should be:
+                  </p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Accessible</strong> — Written in language that is
+                      clear and understandable to both academic and non-academic
+                      audiences
+                    </li>
+                    <li>
+                      <strong>Actionable</strong> — Providing insights that can
+                      be applied in real-world settings
+                    </li>
+                    <li>
+                      <strong>Inclusive</strong> — Respecting and representing
+                      diverse perspectives and experiences
+                    </li>
+                    <li>
+                      <strong>Rigorous</strong> — Based on sound methodology and
+                      ethical research practices
+                    </li>
+                    <li>
+                      <strong>Relevant</strong> — Addressing current challenges
+                      and opportunities in supporting youth with special needs
+                    </li>
+                  </ul>
+                </div>
+
+                <p>
+                  We particularly encourage submissions that center the voices
+                  and experiences of youth with special needs and their
+                  families, and that promote strengths-based approaches to
+                  support and inclusion.
+                </p>
+              </section>
+
+              <section id="article-types" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Article Types
+                </h2>
+                <p class="mb-6">
+                  Hayden's Hub accepts several types of academic articles.
+                  Please identify which category your submission falls under, as
+                  the requirements and review process may vary accordingly:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div
+                    class="bg-white border border-primary rounded-lg p-6 shadow-sm"
+                  >
+                    <h3 class="text-xl font-bold mb-3 text-primary">
+                      Original Research
+                    </h3>
+                    <p class="mb-3">
+                      Empirical studies using qualitative, quantitative, or
+                      mixed methods approaches.
+                    </p>
+                    <p class="mb-2">
+                      <strong>Word count:</strong> 4,000-6,000 words
+                    </p>
+                    <p>
+                      <strong>Structure:</strong> Introduction, Methods,
+                      Results, Discussion, Conclusion
+                    </p>
+                  </div>
+
+                  <div
+                    class="bg-white border border-primary rounded-lg p-6 shadow-sm"
+                  >
+                    <h3 class="text-xl font-bold mb-3 text-primary">
+                      Literature Reviews
+                    </h3>
+                    <p class="mb-3">
+                      Systematic or narrative reviews synthesizing existing
+                      research on a specific topic.
+                    </p>
+                    <p class="mb-2">
+                      <strong>Word count:</strong> 5,000-7,000 words
+                    </p>
+                    <p>
+                      <strong>Structure:</strong> Introduction, Methods,
+                      Findings, Discussion, Implications
+                    </p>
+                  </div>
+
+                  <div
+                    class="bg-white border border-primary rounded-lg p-6 shadow-sm"
+                  >
+                    <h3 class="text-xl font-bold mb-3 text-primary">
+                      Practice Insights
+                    </h3>
+                    <p class="mb-3">
+                      Articles describing innovative programs, interventions, or
+                      approaches with preliminary evidence of effectiveness.
+                    </p>
+                    <p class="mb-2">
+                      <strong>Word count:</strong> 3,000-5,000 words
+                    </p>
+                    <p>
+                      <strong>Structure:</strong> Background, Program
+                      Description, Implementation, Outcomes, Lessons Learned
+                    </p>
+                  </div>
+
+                  <div
+                    class="bg-white border border-primary rounded-lg p-6 shadow-sm"
+                  >
+                    <h3 class="text-xl font-bold mb-3 text-primary">
+                      Policy Analysis
+                    </h3>
+                    <p class="mb-3">
+                      Critical examinations of existing or proposed policies
+                      affecting youth with special needs.
+                    </p>
+                    <p class="mb-2">
+                      <strong>Word count:</strong> 3,000-5,000 words
+                    </p>
+                    <p>
+                      <strong>Structure:</strong> Policy Context, Analysis
+                      Framework, Findings, Recommendations
+                    </p>
+                  </div>
+
+                  <div
+                    class="bg-white border border-primary rounded-lg p-6 shadow-sm"
+                  >
+                    <h3 class="text-xl font-bold mb-3 text-primary">
+                      Theoretical Papers
+                    </h3>
+                    <p class="mb-3">
+                      Articles proposing new conceptual frameworks or
+                      theoretical perspectives.
+                    </p>
+                    <p class="mb-2">
+                      <strong>Word count:</strong> 4,000-6,000 words
+                    </p>
+                    <p>
+                      <strong>Structure:</strong> Introduction, Theoretical
+                      Background, Framework Development, Applications,
+                      Conclusion
+                    </p>
+                  </div>
+
+                  <div
+                    class="bg-white border border-primary rounded-lg p-6 shadow-sm"
+                  >
+                    <h3 class="text-xl font-bold mb-3 text-primary">
+                      Perspective Pieces
+                    </h3>
+                    <p class="mb-3">
+                      Scholarly opinion pieces on current issues, written by
+                      experts in the field.
+                    </p>
+                    <p class="mb-2">
+                      <strong>Word count:</strong> 2,000-3,000 words
+                    </p>
+                    <p>
+                      <strong>Structure:</strong> Flexible, but should include
+                      clear position and supporting evidence
+                    </p>
+                  </div>
+                </div>
+
+                <div class="bg-softPurple p-6 rounded-lg mt-6">
+                  <h3 class="text-xl font-bold mb-3">Special Considerations</h3>
+                  <p class="mb-3">We also welcome:</p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Participatory Research</strong> — Studies
+                      conducted in collaboration with youth with special needs
+                      and/or their families
+                    </li>
+                    <li>
+                      <strong>Case Studies</strong> — In-depth examinations of
+                      specific programs, interventions, or individual
+                      experiences
+                    </li>
+                    <li>
+                      <strong>Research Briefs</strong> — Shorter summaries
+                      (1,500-2,000 words) of research findings with clear
+                      practical implications
+                    </li>
+                  </ul>
+                  <p class="mt-3">
+                    If your submission does not clearly fit into one of these
+                    categories, please contact our editorial team at
+                    <a
+                      href="mailto:research@haydenshub.org"
+                      class="text-primary hover:text-accent underline"
+                      >research@haydenshub.org</a
+                    >
+                    to discuss your proposal.
+                  </p>
+                </div>
+              </section>
+
+              <section id="submission-process" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Submission Process
+                </h2>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Step 1: Pre-submission Inquiry (Optional)
+                </h3>
+                <p class="mb-6">
+                  Authors are welcome to submit a brief pre-submission inquiry
+                  to gauge whether their article aligns with our current
+                  publication priorities. This should include a tentative title,
+                  abstract (250 words maximum), and brief author bio. Send
+                  inquiries to
+                  <a
+                    href="mailto:research@haydenshub.org"
+                    class="text-primary hover:text-accent underline"
+                    >research@haydenshub.org</a
+                  >.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Step 2: Initial Submission
+                </h3>
+                <p class="mb-4">
+                  To submit your full manuscript, please use our online
+                  submission portal at
+                  <a
+                    href="https://external-submission-form.com"
+                    class="text-primary hover:text-accent underline"
+                    >https://external-submission-form.com</a
+                  >. You will need to create an account if you don't already
+                  have one.
+                </p>
+
+                <p class="mb-6">Your initial submission should include:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Cover letter (see details below)</li>
+                  <li>Manuscript file in Microsoft Word format (.docx)</li>
+                  <li>Tables and figures as separate files (if applicable)</li>
+                  <li>Author information page (separate from manuscript)</li>
+                  <li>Completed conflict of interest disclosure form</li>
+                  <li>Supplementary materials (if applicable)</li>
+                </ul>
+
+                <div class="bg-softGreen p-6 rounded-lg mb-6">
+                  <h4 class="text-lg font-bold mb-3">
+                    Cover Letter Requirements
+                  </h4>
+                  <p class="mb-2">Your cover letter should include:</p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>Article title and type</li>
+                    <li>
+                      Brief summary of the article's contribution to the field
+                      (1-2 paragraphs)
+                    </li>
+                    <li>
+                      Statement confirming that the manuscript is not under
+                      consideration elsewhere
+                    </li>
+                    <li>Declaration of any conflicts of interest</li>
+                    <li>Suggestions for potential reviewers (optional)</li>
+                    <li>Any special considerations for review</li>
+                  </ul>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Step 3: Initial Screening
+                </h3>
+                <p class="mb-6">
+                  All submissions undergo an initial screening by our editorial
+                  team to ensure they meet our basic requirements and align with
+                  our mission. This typically takes 1-2 weeks. You will be
+                  notified if your submission is declined at this stage or moved
+                  forward to peer review.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Step 4: Peer Review</h3>
+                <p class="mb-6">
+                  Manuscripts that pass initial screening are sent for peer
+                  review. Our review process typically involves 2-3 reviewers,
+                  including academic experts and practitioners in relevant
+                  fields. We aim to complete the review process within 6-8
+                  weeks.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Step 5: Editorial Decision
+                </h3>
+                <p class="mb-6">
+                  Based on reviewer feedback, the editorial team will make one
+                  of the following decisions:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    <strong>Accept</strong> — The manuscript is accepted with
+                    minimal or no revisions
+                  </li>
+                  <li>
+                    <strong>Minor Revisions</strong> — The manuscript requires
+                    small changes before acceptance
+                  </li>
+                  <li>
+                    <strong>Major Revisions</strong> — Substantial changes are
+                    needed, and the revised manuscript will undergo additional
+                    review
+                  </li>
+                  <li>
+                    <strong>Reject</strong> — The manuscript is not suitable for
+                    publication in Hayden's Hub
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Step 6: Revision and Resubmission
+                </h3>
+                <p class="mb-6">
+                  Authors of manuscripts requiring revisions will typically have
+                  4 weeks for minor revisions or 8 weeks for major revisions.
+                  When resubmitting, please include a detailed response to
+                  reviewer comments explaining how you have addressed each
+                  point.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Step 7: Final Decision and Production
+                </h3>
+                <p>
+                  Once your manuscript is accepted, it will enter our production
+                  process. You will receive proofs to review before final
+                  publication. The typical timeframe from acceptance to
+                  publication is 4-6 weeks.
+                </p>
+              </section>
+
+              <section id="formatting" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Formatting Guidelines
+                </h2>
+
+                <p class="mb-6">
+                  Proper formatting ensures consistency across publications and
+                  facilitates the review process. Please adhere to the following
+                  guidelines:
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">General Formatting</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>File format: Microsoft Word (.docx)</li>
+                  <li>Page size: 8.5 x 11 inches (Letter)</li>
+                  <li>Margins: 1 inch (2.54 cm) on all sides</li>
+                  <li>Line spacing: Double-spaced throughout</li>
+                  <li>Font: Times New Roman, 12-point</li>
+                  <li>Alignment: Left-aligned (not justified)</li>
+                  <li>Page numbers: Bottom center of each page</li>
+                  <li>
+                    Headers: Include a shortened title (50 characters or less)
+                    in the header
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Title Page</h3>
+                <p class="mb-4">
+                  The title page should be submitted as a separate file and
+                  include:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Full title (concise but informative, maximum 15 words)
+                  </li>
+                  <li>
+                    Running title (shortened version, maximum 50 characters)
+                  </li>
+                  <li>
+                    All authors' full names and institutional affiliations
+                  </li>
+                  <li>
+                    Corresponding author's contact information (email, phone,
+                    postal address)
+                  </li>
+                  <li>
+                    Word count (excluding abstract, references, tables, and
+                    figures)
+                  </li>
+                  <li>Number of tables and figures</li>
+                  <li>Funding information</li>
+                  <li>Conflict of interest statement</li>
+                  <li>Acknowledgments</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Manuscript File</h3>
+                <p class="mb-4">
+                  To facilitate blind review, the manuscript file should not
+                  contain any identifying information. Please ensure:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    No author names or affiliations appear in the manuscript
+                  </li>
+                  <li>
+                    Self-citations are written in the third person ("Smith et
+                    al. found..." rather than "We found...")
+                  </li>
+                  <li>
+                    File properties and metadata are cleared of identifying
+                    information
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Headings</h3>
+                <p class="mb-4">Use the following heading structure:</p>
+                <ul class="list-none pl-6 space-y-4 mb-6">
+                  <li>
+                    <strong class="text-xl"
+                      >Level 1: Centered, Bold, Title Case</strong
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-lg"
+                      >Level 2: Left-Aligned, Bold, Title Case</strong
+                    >
+                  </li>
+                  <li>
+                    <strong class="italic"
+                      >Level 3: Indented, Bold, Sentence case, ending with a
+                      period.</strong
+                    >
+                  </li>
+                  <li class="italic">
+                    Level 4: Indented, Bold, Italicized, Sentence case, ending
+                    with a period.
+                  </li>
+                  <li>
+                    Level 5: Indented, Italicized, Sentence case, ending with a
+                    period.
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Paragraphs</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Indent the first line of each paragraph by 0.5 inches (1.27
+                    cm)
+                  </li>
+                  <li>Do not add extra space between paragraphs</li>
+                  <li>
+                    Use a single space after periods and other punctuation marks
+                  </li>
+                </ul>
+
+                <div class="bg-softPink p-6 rounded-lg mb-6">
+                  <h3 class="text-xl font-bold mb-3">Language and Style</h3>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      Use clear, concise language accessible to a
+                      multidisciplinary audience
+                    </li>
+                    <li>Define technical terms and acronyms at first use</li>
+                    <li>
+                      Use person-first language (e.g., "children with autism"
+                      rather than "autistic children") unless identity-first
+                      language is specifically preferred by the community being
+                      discussed
+                    </li>
+                    <li>Avoid passive voice when possible</li>
+                    <li>Use inclusive language that respects diversity</li>
+                    <li>
+                      Follow American Psychological Association (APA) style for
+                      grammar and usage
+                    </li>
+                  </ul>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">File Naming</h3>
+                <p class="mb-4">
+                  Use the following naming convention for all files:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                  <li>
+                    Manuscript: LastNameFirstAuthor_ShortTitle_Manuscript.docx
+                  </li>
+                  <li>
+                    Title page: LastNameFirstAuthor_ShortTitle_TitlePage.docx
+                  </li>
+                  <li>Tables: LastNameFirstAuthor_Table1.docx</li>
+                  <li>
+                    Figures: LastNameFirstAuthor_Figure1.jpg (or appropriate
+                    file extension)
+                  </li>
+                </ul>
+              </section>
+
+              <section id="structure" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Article Structure
+                </h2>
+
+                <p class="mb-6">
+                  While the specific structure may vary by article type, most
+                  submissions should include the following components:
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Abstract</h3>
+                <p class="mb-6">
+                  A structured abstract of 250-300 words should summarize the
+                  key aspects of your article. See the Abstract Guidelines
+                  section for detailed requirements.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Keywords</h3>
+                <p class="mb-6">
+                  Include 4-6 keywords or phrases that accurately represent the
+                  content of your article. These should be listed alphabetically
+                  below the abstract.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Introduction</h3>
+                <p class="mb-4">The introduction should:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Clearly state the problem or question being addressed</li>
+                  <li>Provide relevant background and context</li>
+                  <li>
+                    Explain the significance of the topic for supporting youth
+                    with special needs
+                  </li>
+                  <li>
+                    Briefly review key literature (a more extensive review may
+                    be included in a separate section)
+                  </li>
+                  <li>State the purpose and objectives of the article</li>
+                  <li>Outline the structure of the article</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Literature Review/Background
+                </h3>
+                <p class="mb-4">This section should:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Synthesize relevant previous research and theoretical
+                    frameworks
+                  </li>
+                  <li>Identify gaps or limitations in existing knowledge</li>
+                  <li>
+                    Establish how your article contributes to addressing these
+                    gaps
+                  </li>
+                  <li>
+                    Be organized thematically rather than as a chronological
+                    list of studies
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Methods</h3>
+                <p class="mb-4">
+                  For empirical research, the methods section should:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Describe the research design and rationale</li>
+                  <li>
+                    Detail participant characteristics, sampling procedures, and
+                    recruitment methods
+                  </li>
+                  <li>Explain data collection instruments and procedures</li>
+                  <li>Outline data analysis approaches</li>
+                  <li>Address ethical considerations and approvals</li>
+                  <li>Discuss limitations of the methodology</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Results/Findings</h3>
+                <p class="mb-4">This section should:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Present results clearly and logically, organized by research
+                    questions or themes
+                  </li>
+                  <li>
+                    Use tables and figures effectively to complement the text
+                  </li>
+                  <li>
+                    Report both significant and non-significant findings when
+                    relevant
+                  </li>
+                  <li>
+                    Include relevant statistical information for quantitative
+                    studies
+                  </li>
+                  <li>
+                    Incorporate illustrative quotes or examples for qualitative
+                    studies
+                  </li>
+                  <li>
+                    Avoid interpreting results (save this for the discussion)
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Discussion</h3>
+                <p class="mb-4">The discussion should:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Interpret the findings in relation to the research questions
+                    or objectives
+                  </li>
+                  <li>
+                    Compare results with previous research and theoretical
+                    frameworks
+                  </li>
+                  <li>Explain unexpected findings or contradictions</li>
+                  <li>
+                    Discuss implications for practice, policy, and future
+                    research
+                  </li>
+                  <li>
+                    Acknowledge limitations and alternative interpretations
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Conclusion</h3>
+                <p class="mb-4">The conclusion should:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Summarize the key findings and contributions</li>
+                  <li>Emphasize practical implications and applications</li>
+                  <li>Suggest directions for future research</li>
+                  <li>
+                    End with a compelling statement about the significance of
+                    the work
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">References</h3>
+                <p class="mb-4">
+                  Follow APA 7th edition format for all references. See the
+                  Citations &amp; References section for detailed guidelines.
+                </p>
+
+                <div class="bg-softYellow p-6 rounded-lg">
+                  <h3 class="text-xl font-bold mb-3">Special Sections</h3>
+                  <p class="mb-3">
+                    Depending on your article type, you may also include:
+                  </p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Implications for Practice</strong> — A dedicated
+                      section highlighting practical applications
+                    </li>
+                    <li>
+                      <strong>Policy Recommendations</strong> — Specific
+                      suggestions for policy changes
+                    </li>
+                    <li>
+                      <strong>Implementation Considerations</strong> — Guidance
+                      for applying findings in real-world settings
+                    </li>
+                    <li>
+                      <strong>Voices from the Field</strong> — Perspectives from
+                      practitioners, youth, or families
+                    </li>
+                    <li>
+                      <strong>Resources</strong> — Additional materials, tools,
+                      or references for readers
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="abstract" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Abstract Guidelines
+                </h2>
+
+                <p class="mb-6">
+                  A well-written abstract is crucial for helping readers find
+                  your article and decide whether to read it in full. All
+                  submissions must include a structured abstract of 250-300
+                  words.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Abstract Format</h3>
+                <p class="mb-4">
+                  Use the following structure for your abstract, with each
+                  section clearly labeled:
+                </p>
+
+                <div
+                  class="bg-white border border-primary rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">For Original Research:</h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Background:</strong> Brief context and rationale
+                      for the study
+                    </li>
+                    <li>
+                      <strong>Objective:</strong> Specific aims or research
+                      questions
+                    </li>
+                    <li>
+                      <strong>Methods:</strong> Study design, participants, and
+                      key methodological approaches
+                    </li>
+                    <li><strong>Results:</strong> Primary findings</li>
+                    <li>
+                      <strong>Conclusions:</strong> Main interpretations and
+                      implications
+                    </li>
+                    <li>
+                      <strong>Implications:</strong> Practical applications for
+                      supporting youth with special needs
+                    </li>
+                  </ul>
+                </div>
+
+                <div
+                  class="bg-white border border-primary rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">For Literature Reviews:</h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Background:</strong> Context and purpose of the
+                      review
+                    </li>
+                    <li>
+                      <strong>Methods:</strong> Search strategy, inclusion
+                      criteria, and analysis approach
+                    </li>
+                    <li>
+                      <strong>Results:</strong> Summary of key findings from the
+                      literature
+                    </li>
+                    <li>
+                      <strong>Conclusions:</strong> Synthesis of the literature
+                      and identified gaps
+                    </li>
+                    <li>
+                      <strong>Implications:</strong> Relevance for practice,
+                      policy, and future research
+                    </li>
+                  </ul>
+                </div>
+
+                <div
+                  class="bg-white border border-primary rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">For Practice Insights:</h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Background:</strong> Context and need for the
+                      program or approach
+                    </li>
+                    <li>
+                      <strong>Program Description:</strong> Brief overview of
+                      the intervention or practice
+                    </li>
+                    <li>
+                      <strong>Implementation:</strong> Key aspects of how the
+                      program was implemented
+                    </li>
+                    <li>
+                      <strong>Outcomes:</strong> Observed results and impact
+                    </li>
+                    <li>
+                      <strong>Lessons Learned:</strong> Key insights and
+                      recommendations
+                    </li>
+                  </ul>
+                </div>
+
+                <div
+                  class="bg-white border border-primary rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">For Policy Analysis:</h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Context:</strong> Policy background and
+                      significance
+                    </li>
+                    <li>
+                      <strong>Approach:</strong> Analytical framework and
+                      methods
+                    </li>
+                    <li>
+                      <strong>Findings:</strong> Key results of the analysis
+                    </li>
+                    <li>
+                      <strong>Recommendations:</strong> Proposed policy changes
+                      or improvements
+                    </li>
+                    <li>
+                      <strong>Impact:</strong> Potential effects on youth with
+                      special needs
+                    </li>
+                  </ul>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">Abstract Writing Tips</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Write the abstract after completing your manuscript</li>
+                  <li>Use clear, concise language with minimal jargon</li>
+                  <li>
+                    Include specific information rather than vague statements
+                  </li>
+                  <li>Avoid citations in the abstract</li>
+                  <li>
+                    Do not include information that doesn't appear in the main
+                    text
+                  </li>
+                  <li>Proofread carefully for errors and clarity</li>
+                </ul>
+
+                <div class="bg-softGreen p-6 rounded-lg">
+                  <h3 class="text-xl font-bold mb-3">Plain Language Summary</h3>
+                  <p class="mb-3">
+                    In addition to the structured abstract, please provide a
+                    plain language summary (150-200 words) that:
+                  </p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      Explains the key points of your article in accessible,
+                      jargon-free language
+                    </li>
+                    <li>
+                      Highlights the practical relevance for youth with special
+                      needs, families, and practitioners
+                    </li>
+                    <li>
+                      Can be understood by readers without specialized knowledge
+                      in the field
+                    </li>
+                    <li>Uses active voice and everyday language</li>
+                  </ul>
+                  <p class="mt-3">
+                    This summary will be featured prominently on our website to
+                    make your research accessible to a broader audience.
+                  </p>
+                </div>
+              </section>
+
+              <section id="citations" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Citations &amp; References
+                </h2>
+
+                <p class="mb-6">
+                  Hayden's Hub follows the American Psychological Association
+                  (APA) 7th edition style for citations and references. Please
+                  adhere to these guidelines carefully.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">In-Text Citations</h3>
+                <div
+                  class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">Basic Format:</h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>One author: (Smith, 2020) or Smith (2020)</li>
+                    <li>
+                      Two authors: (Smith &amp; Jones, 2020) or Smith and Jones
+                      (2020)
+                    </li>
+                    <li>
+                      Three or more authors: (Smith et al., 2020) or Smith et
+                      al. (2020)
+                    </li>
+                    <li>Multiple works: (Smith, 2020; Jones, 2019)</li>
+                    <li>Direct quote: (Smith, 2020, p. 45)</li>
+                  </ul>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">Reference List</h3>
+                <p class="mb-4">The reference list should:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Begin on a new page after the main text</li>
+                  <li>Be double-spaced</li>
+                  <li>
+                    Use a hanging indent format (first line flush left,
+                    subsequent lines indented 0.5 inches)
+                  </li>
+                  <li>List entries alphabetically by author's last name</li>
+                  <li>
+                    Include DOIs (Digital Object Identifiers) when available
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Reference Examples</h3>
+                <div
+                  class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">Journal Article:</h4>
+                  <p class="mb-4 pl-6 text-sm">
+                    Author, A. A., Author, B. B., &amp; Author, C. C. (Year).
+                    Title of article. <em>Title of Journal</em>,
+                    <em>Volume</em>(Issue), page range. https://doi.org/xxxx
+                  </p>
+                  <p class="mb-2 font-bold">Example:</p>
+                  <p class="pl-6 text-sm">
+                    Johnson, S. L., Chen, M., &amp; Rodriguez, E. (2022).
+                    Inclusive education practices for youth with sensory
+                    processing differences.
+                    <em>Journal of Special Education</em>, <em>45</em>(3),
+                    112-128. https://doi.org/10.1234/jse.2022.45.3.112
+                  </p>
+                </div>
+
+                <div
+                  class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">Book:</h4>
+                  <p class="mb-4 pl-6 text-sm">
+                    Author, A. A. (Year). <em>Title of book</em>. Publisher.
+                  </p>
+                  <p class="mb-2 font-bold">Example:</p>
+                  <p class="pl-6 text-sm">
+                    Wilson, J. (2021).
+                    <em
+                      >Supporting transitions to adulthood for youth with
+                      special needs</em
+                    >. Academic Press.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">Book Chapter:</h4>
+                  <p class="mb-4 pl-6 text-sm">
+                    Author, A. A., &amp; Author, B. B. (Year). Title of chapter.
+                    In E. E. Editor &amp; F. F. Editor (Eds.),
+                    <em>Title of book</em> (pp. page range). Publisher.
+                  </p>
+                  <p class="mb-2 font-bold">Example:</p>
+                  <p class="pl-6 text-sm">
+                    Patel, P., &amp; Thompson, A. (2023). Building inclusive
+                    community spaces. In S. Johnson &amp; M. Chen (Eds.),
+                    <em
+                      >Community-based supports for youth with special needs</em
+                    >
+                    (pp. 45-67). Oxford University Press.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">Website:</h4>
+                  <p class="mb-4 pl-6 text-sm">
+                    Author, A. A. (Year, Month Day). <em>Title of page</em>.
+                    Site Name. URL
+                  </p>
+                  <p class="mb-2 font-bold">Example:</p>
+                  <p class="pl-6 text-sm">
+                    Centers for Disease Control and Prevention. (2022, March
+                    15).
+                    <em>Data and statistics on autism spectrum disorder</em>.
+                    https://www.cdc.gov/ncbddd/autism/data.html
+                  </p>
+                </div>
+
+                <div
+                  class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">Report:</h4>
+                  <p class="mb-4 pl-6 text-sm">
+                    Author, A. A. (Year). <em>Title of report</em> (Report No.
+                    123). Publisher.
+                  </p>
+                  <p class="mb-2 font-bold">Example:</p>
+                  <p class="pl-6 text-sm">
+                    National Council on Disability. (2021).
+                    <em
+                      >The state of educational supports for students with
+                      disabilities</em
+                    >
+                    (Report No. 2021-03). U.S. Government Printing Office.
+                  </p>
+                </div>
+
+                <div class="bg-softPurple p-6 rounded-lg">
+                  <h3 class="text-xl font-bold mb-3">Citation Management</h3>
+                  <p class="mb-3">
+                    We strongly recommend using reference management software
+                    such as:
+                  </p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>Zotero (free, open-source)</li>
+                    <li>Mendeley (free)</li>
+                    <li>EndNote (subscription-based)</li>
+                    <li>RefWorks (subscription-based)</li>
+                  </ul>
+                  <p class="mt-3">
+                    These tools can help ensure accuracy and consistency in your
+                    citations and reference list, and can export references in
+                    APA 7th edition format.
+                  </p>
+                </div>
+              </section>
+
+              <section id="tables-figures" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Tables &amp; Figures
+                </h2>
+
+                <p class="mb-6">
+                  Tables and figures should enhance understanding of your
+                  content without duplicating information in the text. They
+                  should be clear, necessary, and accessible.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">General Guidelines</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Number tables and figures consecutively (Table 1, Table 2,
+                    Figure 1, Figure 2, etc.)
+                  </li>
+                  <li>
+                    Cite all tables and figures in the text (e.g., "As shown in
+                    Table 1..." or "Figure 2 illustrates...")
+                  </li>
+                  <li>
+                    Submit each table and figure as a separate file, in addition
+                    to placing them in the manuscript
+                  </li>
+                  <li>
+                    Ensure all tables and figures are necessary and add value to
+                    the article
+                  </li>
+                  <li>
+                    Keep tables and figures simple and focused on essential
+                    information
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Tables</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Create tables using the table function in Word, not as
+                    images or spreadsheets
+                  </li>
+                  <li>Include a brief, descriptive title above each table</li>
+                  <li>Use clear column and row headings</li>
+                  <li>
+                    Include explanatory notes below the table when necessary
+                  </li>
+                  <li>
+                    Use standard abbreviations and explain any specialized
+                    abbreviations in a note
+                  </li>
+                  <li>Format tables according to APA 7th edition guidelines</li>
+                </ul>
+
+                <div
+                  class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">Table Example:</h4>
+                  <p class="mb-2 text-center font-bold">Table 1</p>
+                  <p class="mb-4 text-center">
+                    <em>Participant Demographics by Group (N = 60)</em>
+                  </p>
+
+                  <div class="overflow-x-auto">
+                    <table
+                      class="min-w-full border-collapse border border-gray-300"
+                    >
+                      <thead>
+                        <tr class="bg-gray-100">
+                          <th class="border border-gray-300 px-4 py-2">
+                            Characteristic
+                          </th>
+                          <th class="border border-gray-300 px-4 py-2">
+                            Intervention group (n = 30)
+                          </th>
+                          <th class="border border-gray-300 px-4 py-2">
+                            Control group (n = 30)
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="border border-gray-300 px-4 py-2">
+                            Age in years, M (SD)
+                          </td>
+                          <td class="border border-gray-300 px-4 py-2">
+                            12.4 (2.3)
+                          </td>
+                          <td class="border border-gray-300 px-4 py-2">
+                            12.6 (2.1)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="border border-gray-300 px-4 py-2">
+                            Gender, n (%)
+                          </td>
+                          <td class="border border-gray-300 px-4 py-2"></td>
+                          <td class="border border-gray-300 px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                          <td class="border border-gray-300 px-4 py-2 pl-8">
+                            Female
+                          </td>
+                          <td class="border border-gray-300 px-4 py-2">
+                            16 (53.3)
+                          </td>
+                          <td class="border border-gray-300 px-4 py-2">
+                            15 (50.0)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="border border-gray-300 px-4 py-2 pl-8">
+                            Male
+                          </td>
+                          <td class="border border-gray-300 px-4 py-2">
+                            14 (46.7)
+                          </td>
+                          <td class="border border-gray-300 px-4 py-2">
+                            15 (50.0)
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p class="mt-2 text-sm">
+                    <em>Note.</em> M = mean; SD = standard deviation.
+                  </p>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">Figures</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Submit figures in high-resolution (minimum 300 dpi) TIFF,
+                    PNG, or JPEG format
+                  </li>
+                  <li>Include a brief, descriptive title below each figure</li>
+                  <li>
+                    Make figures accessible by using:
+                    <ul class="list-disc pl-6 space-y-1 mt-2">
+                      <li>Clear, legible fonts (minimum 8-point size)</li>
+                      <li>High contrast between elements</li>
+                      <li>
+                        Patterns in addition to colors for distinguishing
+                        elements
+                      </li>
+                      <li>Descriptive legends and labels</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Include detailed captions that explain the figure and
+                    highlight key points
+                  </li>
+                  <li>
+                    Obtain and cite permission for any figures reproduced from
+                    other sources
+                  </li>
+                </ul>
+
+                <div
+                  class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6"
+                >
+                  <h4 class="font-bold mb-2">Figure Caption Example:</h4>
+                  <p class="mb-2 text-center font-bold">Figure 1</p>
+                  <div
+                    class="bg-gray-100 h-48 flex items-center justify-center mb-2 border border-gray-300"
+                  >
+                    [Example figure would appear here]
+                  </div>
+                  <p class="text-sm">
+                    <em
+                      >Conceptual framework for inclusive community programming.
+                      This figure illustrates the interconnected factors that
+                      contribute to successful inclusion of youth with special
+                      needs in community settings. Adapted from "Building
+                      Inclusive Communities" by P. Patel, 2022, Journal of
+                      Community Inclusion, 15(2), p. 78. Copyright 2022 by
+                      Community Research Association.</em
+                    >
+                  </p>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">Data Visualization</h3>
+                <p class="mb-4">
+                  Effective data visualization is crucial for communicating your
+                  findings. Consider these best practices:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Choose the appropriate chart type for your data (e.g., bar
+                    charts for comparisons, line charts for trends)
+                  </li>
+                  <li>
+                    Avoid 3D effects, excessive gridlines, and other visual
+                    clutter
+                  </li>
+                  <li>Use a consistent color scheme throughout your figures</li>
+                  <li>Label axes clearly and include units of measurement</li>
+                  <li>
+                    Consider accessibility when choosing colors (avoid red/green
+                    combinations)
+                  </li>
+                  <li>Keep figures simple and focused on key messages</li>
+                </ul>
+
+                <div class="bg-softYellow p-6 rounded-lg">
+                  <h3 class="text-xl font-bold mb-3">
+                    Alternative Text for Figures
+                  </h3>
+                  <p class="mb-3">
+                    For each figure, provide alternative text (alt text) that:
+                  </p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>Describes the figure for readers who cannot see it</li>
+                    <li>
+                      Includes the essential information conveyed by the figure
+                    </li>
+                    <li>Is concise (typically 50-150 words)</li>
+                    <li>Does not repeat the caption but complements it</li>
+                  </ul>
+                  <p class="mt-3">
+                    Example: "Figure 1 shows a circular diagram with four
+                    interconnected factors contributing to inclusive community
+                    programming: Physical Environment, Staff Training, Program
+                    Design, and Family Engagement. Arrows between all factors
+                    indicate bidirectional relationships. The Physical
+                    Environment section is highlighted in blue, indicating its
+                    foundational role in the framework."
+                  </p>
+                </div>
+              </section>
+
+              <section id="accessibility" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Accessibility Requirements
+                </h2>
+
+                <p class="mb-6">
+                  Hayden's Hub is committed to making research accessible to all
+                  readers, including those with disabilities. Please follow
+                  these guidelines to ensure your article is accessible:
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Document Structure</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Use proper heading levels in sequential order (H1, H2, H3,
+                    etc.)
+                  </li>
+                  <li>
+                    Use built-in formatting tools for lists, tables, and other
+                    elements
+                  </li>
+                  <li>
+                    Avoid using text formatting (bold, italic) as the only way
+                    to indicate structure
+                  </li>
+                  <li>
+                    Include a logical reading order that screen readers can
+                    follow
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Text and Language</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Use clear, plain language whenever possible</li>
+                  <li>Define technical terms and acronyms at first use</li>
+                  <li>
+                    Use descriptive link text (e.g., "Read more about inclusive
+                    education" rather than "Click here")
+                  </li>
+                  <li>
+                    Ensure sufficient contrast between text and background
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Tables</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Use simple table structures with clear headers</li>
+                  <li>Avoid merged cells when possible</li>
+                  <li>
+                    Include row and column headers that clearly describe the
+                    data
+                  </li>
+                  <li>Provide a summary of complex tables in the text</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Figures and Images</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Provide alternative text (alt text) for all figures</li>
+                  <li>Use high contrast in visual elements</li>
+                  <li>Do not rely on color alone to convey information</li>
+                  <li>Include descriptive captions</li>
+                  <li>Provide data tables for charts and graphs</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Multimedia Content</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Provide transcripts for audio content</li>
+                  <li>Include captions for video content</li>
+                  <li>Ensure multimedia controls are keyboard accessible</li>
+                </ul>
+
+                <div class="bg-softPink p-6 rounded-lg">
+                  <h3 class="text-xl font-bold mb-3">
+                    Accessibility Checklist
+                  </h3>
+                  <p class="mb-3">
+                    Before submitting your article, verify that:
+                  </p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>Document structure uses proper heading levels</li>
+                    <li>All images have alternative text</li>
+                    <li>Tables have clear headers and simple structure</li>
+                    <li>
+                      Color is not the only means of conveying information
+                    </li>
+                    <li>Links have descriptive text</li>
+                    <li>Text has sufficient contrast with background</li>
+                    <li>
+                      All acronyms and technical terms are defined at first use
+                    </li>
+                    <li>Document can be navigated using keyboard only</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="ethical" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Ethical Considerations
+                </h2>
+
+                <p class="mb-6">
+                  Hayden's Hub is committed to upholding the highest ethical
+                  standards in research and publication. Authors must adhere to
+                  the following guidelines:
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Research Ethics</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    All research involving human participants must have
+                    appropriate ethical approval from an Institutional Review
+                    Board (IRB) or equivalent ethics committee
+                  </li>
+                  <li>
+                    Authors must state in the methods section that ethical
+                    approval was obtained and provide the name of the approving
+                    committee and reference number
+                  </li>
+                  <li>
+                    Research must be conducted in accordance with the
+                    Declaration of Helsinki for medical research or equivalent
+                    ethical standards for non-medical research
+                  </li>
+                  <li>
+                    Informed consent must be obtained from all research
+                    participants or their legal guardians
+                  </li>
+                  <li>
+                    Special protections must be in place for research involving
+                    vulnerable populations, including youth with special needs
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Participant Privacy and Confidentiality
+                </h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Protect the privacy and confidentiality of all research
+                    participants
+                  </li>
+                  <li>
+                    Use pseudonyms or participant codes rather than real names
+                  </li>
+                  <li>
+                    Remove or alter identifying information in quotes or
+                    examples
+                  </li>
+                  <li>
+                    Obtain specific consent for any identifiable information
+                    that must be included
+                  </li>
+                  <li>
+                    Be particularly careful with case studies, which may contain
+                    potentially identifiable information even when names are
+                    changed
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Respectful Representation
+                </h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Use respectful, person-first language unless identity-first
+                    language is specifically preferred by the community being
+                    discussed
+                  </li>
+                  <li>
+                    Avoid deficit-based language that focuses solely on
+                    limitations or challenges
+                  </li>
+                  <li>
+                    Represent participants' perspectives accurately and fairly
+                  </li>
+                  <li>
+                    Consider how research findings might impact the communities
+                    being studied
+                  </li>
+                  <li>
+                    Acknowledge the expertise of individuals with lived
+                    experience
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Authorship and Contributions
+                </h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    All listed authors must have made substantial contributions
+                    to the work
+                  </li>
+                  <li>
+                    Include only those who meet all four criteria for
+                    authorship:
+                    <ul class="list-disc pl-6 space-y-1 mt-2">
+                      <li>
+                        Substantial contribution to conception, design, data
+                        collection, analysis, or interpretation
+                      </li>
+                      <li>Drafting or critically revising the manuscript</li>
+                      <li>Final approval of the version to be published</li>
+                      <li>
+                        Agreement to be accountable for all aspects of the work
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Acknowledge all other contributors who do not meet
+                    authorship criteria
+                  </li>
+                  <li>
+                    Consider including youth with special needs and/or their
+                    families as co-authors when appropriate
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Conflicts of Interest</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Disclose all potential conflicts of interest, including
+                    financial, personal, or professional relationships that
+                    could influence the research
+                  </li>
+                  <li>
+                    Complete and submit the Conflict of Interest Disclosure Form
+                    with your submission
+                  </li>
+                  <li>
+                    Include a Conflict of Interest statement in your manuscript
+                  </li>
+                  <li>
+                    When in doubt, disclose potential conflicts rather than
+                    omitting them
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">
+                  Plagiarism and Duplicate Publication
+                </h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Ensure all content is original or properly cited</li>
+                  <li>Do not submit work that has been published elsewhere</li>
+                  <li>
+                    Clearly identify any content that overlaps with your
+                    previously published work
+                  </li>
+                  <li>
+                    Obtain permission to reproduce any copyrighted material
+                  </li>
+                </ul>
+
+                <div class="bg-softGreen p-6 rounded-lg">
+                  <h3 class="text-xl font-bold mb-3">
+                    Community-Based Participatory Research
+                  </h3>
+                  <p class="mb-3">
+                    We particularly value research that meaningfully involves
+                    youth with special needs and their families. If your
+                    research uses participatory approaches:
+                  </p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      Describe how participants were involved in research
+                      design, data collection, analysis, and/or dissemination
+                    </li>
+                    <li>Explain how power imbalances were addressed</li>
+                    <li>Discuss how the research benefited the community</li>
+                    <li>
+                      Consider co-authorship with community members when
+                      appropriate
+                    </li>
+                    <li>
+                      Include community perspectives in the interpretation of
+                      findings
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="review-process" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Review Process
+                </h2>
+
+                <p class="mb-6">
+                  Understanding our review process can help you prepare a
+                  stronger submission and set appropriate expectations for
+                  timeline and feedback.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Initial Screening</h3>
+                <p class="mb-4">
+                  All submissions undergo an initial screening by our editorial
+                  team to assess:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Alignment with the journal's scope and mission</li>
+                  <li>Adherence to submission guidelines</li>
+                  <li>Quality of writing and presentation</li>
+                  <li>Potential contribution to the field</li>
+                  <li>Ethical compliance</li>
+                </ul>
+                <p class="mb-6">
+                  Submissions that do not meet these basic criteria may be
+                  returned to authors without further review. This initial
+                  screening typically takes 1-2 weeks.
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Peer Review</h3>
+                <p class="mb-4">
+                  Manuscripts that pass initial screening are sent for peer
+                  review. Our review process:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Uses a double-blind approach (authors and reviewers are
+                    anonymous to each other)
+                  </li>
+                  <li>Typically involves 2-3 reviewers per manuscript</li>
+                  <li>
+                    Includes both academic experts and practitioners with
+                    relevant expertise
+                  </li>
+                  <li>
+                    May include reviewers with lived experience when appropriate
+                  </li>
+                  <li>
+                    Aims to provide constructive feedback to improve the
+                    manuscript
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Review Criteria</h3>
+                <p class="mb-4">Reviewers evaluate manuscripts based on:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Relevance to supporting youth with special needs</li>
+                  <li>Originality and contribution to the field</li>
+                  <li>Methodological rigor and appropriateness</li>
+                  <li>Quality of analysis and interpretation</li>
+                  <li>Clarity of presentation</li>
+                  <li>Practical implications and applications</li>
+                  <li>Ethical considerations</li>
+                  <li>Accessibility to diverse audiences</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Editorial Decision</h3>
+                <p class="mb-4">
+                  Based on reviewer feedback, the editorial team will make one
+                  of the following decisions:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    <strong>Accept</strong> — The manuscript is accepted with
+                    minimal or no revisions
+                  </li>
+                  <li>
+                    <strong>Minor Revisions</strong> — The manuscript requires
+                    small changes before acceptance
+                  </li>
+                  <li>
+                    <strong>Major Revisions</strong> — Substantial changes are
+                    needed, and the revised manuscript will undergo additional
+                    review
+                  </li>
+                  <li>
+                    <strong>Reject</strong> — The manuscript is not suitable for
+                    publication in Hayden's Hub
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Revision Process</h3>
+                <p class="mb-4">If revisions are requested:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Authors will receive detailed feedback from reviewers and
+                    editors
+                  </li>
+                  <li>
+                    A deadline will be provided for submitting revisions
+                    (typically 4 weeks for minor revisions, 8 weeks for major
+                    revisions)
+                  </li>
+                  <li>
+                    Authors must submit a response letter addressing each point
+                    raised by reviewers
+                  </li>
+                  <li>
+                    Changes in the manuscript should be highlighted or tracked
+                  </li>
+                  <li>
+                    Major revisions will typically undergo another round of peer
+                    review
+                  </li>
+                </ul>
+
+                <div class="bg-softPurple p-6 rounded-lg">
+                  <h3 class="text-xl font-bold mb-3">Timeline</h3>
+                  <p class="mb-3">Our typical review timeline is:</p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Initial screening:</strong> 1-2 weeks after
+                      submission
+                    </li>
+                    <li><strong>Peer review:</strong> 6-8 weeks</li>
+                    <li>
+                      <strong>Editorial decision:</strong> 1-2 weeks after
+                      receiving all reviews
+                    </li>
+                    <li>
+                      <strong>Revision period:</strong> 4-8 weeks (depending on
+                      extent of revisions)
+                    </li>
+                    <li>
+                      <strong>Final decision:</strong> 2-4 weeks after receiving
+                      revisions
+                    </li>
+                    <li>
+                      <strong>Publication:</strong> 4-6 weeks after acceptance
+                    </li>
+                  </ul>
+                  <p class="mt-3">
+                    The total time from submission to publication typically
+                    ranges from 3-6 months, depending on the extent of revisions
+                    required.
+                  </p>
+                </div>
+              </section>
+
+              <section id="publication" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-primary border-b border-primary pb-2"
+                >
+                  Publication Process
+                </h2>
+
+                <p class="mb-6">
+                  Once your manuscript is accepted, it will enter our
+                  publication process. Here's what to expect:
+                </p>
+
+                <h3 class="text-2xl font-bold mb-4">Copyediting</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Your manuscript will be copyedited for grammar, spelling,
+                    punctuation, and style
+                  </li>
+                  <li>
+                    Copyeditors will ensure consistency with our style guide
+                  </li>
+                  <li>
+                    You will receive the copyedited manuscript to review and
+                    approve changes
+                  </li>
+                  <li>
+                    This is your opportunity to make minor clarifications, but
+                    not substantial revisions
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Layout and Formatting</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    Your article will be formatted according to our publication
+                    template
+                  </li>
+                  <li>
+                    Tables and figures will be placed appropriately within the
+                    text
+                  </li>
+                  <li>
+                    Special attention will be given to accessibility features
+                  </li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-4">Proofreading</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>
+                    You will receive page proofs to review before final
+                    publication
+                  </li>
+                  <li>
+                    Check proofs carefully for any remaining errors or
+                    formatting issues
+                  </li>
+                  
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <Footer />
+</Layout>

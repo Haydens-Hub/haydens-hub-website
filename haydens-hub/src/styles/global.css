@@ -1,198 +1,261 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #D43F29;
-    color: white;
-    padding: 8px;
-    z-index: 100;
-    transition: top 0.3s;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #d43f29;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
 }
 
 .skip-link:focus {
-    top: 0;
+  top: 0;
 }
 
 .nav-item {
-    position: relative;
+  position: relative;
 }
 
 .nav-item::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #D43F29;
-    transition: width 0.3s;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #d43f29;
+  transition: width 0.3s;
 }
 
 .nav-item:hover::after,
 .nav-item.active::after {
-    width: 100%;
+  width: 100%;
 }
 
 .resource-card {
-    transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .resource-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .team-card {
-    transition: transform 0.3s;
+  transition: transform 0.3s;
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .blog-card {
-    transition: transform 0.3s;
+  transition: transform 0.3s;
 }
 
 .blog-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 /* Accessibility improvements */
 :focus {
-    outline: 3px solid #D43F29;
-    outline-offset: 2px;
+  outline: 3px solid #d43f29;
+  outline-offset: 2px;
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .team-avatar {
-    aspect-ratio: 1/1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Table styles */
 .resource-table {
-    border-collapse: separate;
-    border-spacing: 0;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .resource-table th {
-    position: sticky;
-    z-index: 10;
-    background-color: #5D8DCD;
+  position: sticky;
+  z-index: 10;
+  background-color: #5d8dcd;
 }
 
 thead tr:first-child th {
-    padding-top: 1.5rem; /* extra top spacing */
+  padding-top: 1.5rem; /* extra top spacing */
 }
 
 .tag {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin: 0.125rem;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: 0.125rem;
 }
 
 .tag-free {
-    background-color: #B9E185;
-    color: #3F493D;
+  background-color: #b9e185;
+  color: #3f493d;
 }
 
 .tag-low {
-    background-color: #CDD6FF;
-    color: #3F493D;
+  background-color: #cdd6ff;
+  color: #3f493d;
 }
 
 .tag-high {
-    background-color: #E6CFB8;
-    color: #3F493D;
+  background-color: #e6cfb8;
+  color: #3f493d;
 }
 
 .tag-wheelchair {
-    background-color: #5D8DCD;
-    color: white;
+  background-color: #5d8dcd;
+  color: white;
 }
 
 .tag-virtual {
-    background-color: #3E87B0;
-    color: white;
+  background-color: #3e87b0;
+  color: white;
 }
 
 .filter-active {
-    background-color: #D43F29;
-    color: white;
+  background-color: #d43f29;
+  color: white;
 }
-        
+
 /* Resource box styling */
 .resource-box {
-    transition: transform 0.3s, box-shadow 0.3s;
-    height: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
 }
 
 .resource-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .resource-icon {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
 /* Resource category tabs */
 .category-tab {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem 0.5rem 0 0;
-    font-weight: 600;
-    transition: all 0.3s;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-weight: 600;
+  transition: all 0.3s;
 }
 
 .category-tab.active {
-    background-color: white;
-    color: #5D8DCD;
-    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  color: #5d8dcd;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .category-tab:not(.active) {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #3F493D;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #3f493d;
 }
 
 .category-tab:not(.active):hover {
-    background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Article card styling */
+.article-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Tag styling */
+.tag {
+  font-size: 1rem; /* text-base in Tailwind */
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  min-width: 180px;
+}
+
+.tag:hover {
+  background-color: #5d8dcd;
+  color: white;
+}
+
+.tag.active {
+  background-color: #5d8dcd;
+  color: white;
+}
+
+/* CTA button styling */
+.cta-button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Table of contents styling */
+.toc-link {
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+  display: block;
+  padding: 6px 0 6px 12px;
+  margin: 4px 0;
+}
+
+.toc-link:hover {
+  border-left-color: #5d8dcd;
+  background-color: rgba(93, 141, 205, 0.1);
+}
+
+.toc-link.active {
+  border-left-color: #d43f29;
+  color: #d43f29;
+  font-weight: 500;
 }
