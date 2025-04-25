@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ResourceCategory from '../components/ResourceCategory.astro';
+---
+
+<Layout title="Youth Resources - Hayden's Hub">
+  <Header />
+  <main id="main-content">
+    <ResourceCategory 
+      title="Resources for Youth"
+      description="Helpful tools and support for parents and caregivers of youth with special needs."
+      image="/assets/caregivers.jpg"
+    />
+  </main>
+  <Footer />
+</Layout>

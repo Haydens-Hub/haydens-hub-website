@@ -152,3 +152,47 @@ thead tr:first-child th {
     background-color: #D43F29;
     color: white;
 }
+        
+/* Resource box styling */
+.resource-box {
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.resource-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.resource-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Resource category tabs */
+.category-tab {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.category-tab.active {
+    background-color: white;
+    color: #5D8DCD;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.category-tab:not(.active) {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #3F493D;
+}
+
+.category-tab:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}

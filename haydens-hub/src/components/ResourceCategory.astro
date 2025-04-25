@@ -1,0 +1,183 @@
+---
+const { title, subtitle, activeTab, introHeading, introText, boxes, downloads, videos } = Astro.props;
+---
+
+<main id="main-content">
+        <!-- Hero Section -->
+        <section class="bg-primary text-white py-12 md:py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-3xl md:text-5xl font-bold mb-6">Resources for Youth</h1>
+                    <p class="text-xl md:text-2xl">Support, guidance, and tools designed specifically for young people with special needs</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resource Categories Tabs -->
+        <section class="bg-lightBlue py-6">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap justify-center gap-2">
+                    <a href="caregivers" class="category-tab">For Caregivers</a>
+                    <a href="youth" class="category-tab active">For Youth</a>
+                    <a href="community" class="category-tab">For Community</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="bg-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Finding Your Path</h2>
+                    
+                    <div class="bg-lightBlue bg-opacity-30 rounded-lg p-8 mb-10">
+                        <p class="text-lg mb-4">We understand that navigating life with special needs can sometimes feel overwhelming. That's why we've gathered resources, tips, and guidance specifically designed to help you thrive.</p>
+                        
+                        <p class="text-lg mb-4">These resources are created with input from youth just like you, as well as experts in various fields. Our goal is to provide practical, helpful information that makes a real difference in your daily life.</p>
+                        
+                        <p class="text-lg">Remember, everyone's journey is unique. Take what works for you, and know that Hayden's Hub is here to support you every step of the way.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resource Boxes Section -->
+        <section class="py-12 bg-grey">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-10 text-center">Helpful Tips &amp; Strategies</h2>
+                
+                <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+                    <!-- Resource Box 1 -->
+                    <div class="resource-box bg-white rounded-lg shadow-md p-6">
+                        <div class="resource-icon bg-softPink">
+                            <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Link People Together</h3>
+                        <p class="text-lg">Link people up with <strong>someone else in the group</strong> if it's possible for them to <strong>travel together</strong>. This creates a support system and makes attendance more likely for those who might otherwise struggle with transportation.</p>
+                    </div>
+                    
+                    <!-- Resource Box 2 -->
+                    <div class="resource-box bg-white rounded-lg shadow-md p-6">
+                        <div class="resource-icon bg-softPurple">
+                            <svg class="w-8 h-8 text-blue" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Build Flexibility</h3>
+                        <p class="text-lg">Build <strong>flexibility into the contracts</strong> for link workers so they can offer <strong>more time or appointments</strong> if needed. This ensures that individuals receive the appropriate level of support based on their unique circumstances.</p>
+                    </div>
+                    
+                    <!-- Resource Box 3 -->
+                    <div class="resource-box bg-white rounded-lg shadow-md p-6">
+                        <div class="resource-icon bg-softYellow">
+                            <svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Apply for Local Grants</h3>
+                        <p class="text-lg">Apply for <strong>local grants</strong> if you need to make <strong>reasonable adjustments or adaptations</strong> to the environment or equipment. Funding can help create more accessible and inclusive spaces for everyone.</p>
+                    </div>
+                    
+                    <!-- Resource Box 4 -->
+                    <div class="resource-box bg-white rounded-lg shadow-md p-6">
+                        <div class="resource-icon bg-softGreen">
+                            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Make Grants Available</h3>
+                        <p class="text-lg">Make <strong>grants or investments available</strong> to community groups so they can <strong>build capacity</strong> and put in place reasonable adjustments for people to be part of them. This helps create more inclusive community spaces.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Resources Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-10 text-center">Additional Resources</h2>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- Downloadable Resources -->
+                    <div class="bg-cream bg-opacity-50 rounded-lg p-8 mb-10">
+                        <h3 class="text-2xl font-bold mb-4">Downloadable Guides</h3>
+                        <p class="text-lg mb-6">These printable resources are designed to help you navigate various aspects of daily life:</p>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold">Self-Advocacy Workbook</h4>
+                                    <p>Interactive exercises to help you identify your needs and practice communicating them effectively.</p>
+                                    <a href="#" class="text-primary hover:text-accent font-medium">Download PDF</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold">Weekly Planner Template</h4>
+                                    <p>A customizable planner designed with visual supports to help manage your schedule.</p>
+                                    <a href="#" class="text-primary hover:text-accent font-medium">Download PDF</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold">Calm-Down Strategies Card Set</h4>
+                                    <p>Printable cards with different strategies to help manage stress and big emotions.</p>
+                                    <a href="#" class="text-primary hover:text-accent font-medium">Download PDF</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Video Resources -->
+                    <div class="bg-lightBlue bg-opacity-30 rounded-lg p-8">
+                        <h3 class="text-2xl font-bold mb-4">Video Resources</h3>
+                        <p class="text-lg mb-6">Watch these helpful videos created by youth and experts:</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-md mb-3 flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold">Self-Advocacy in School</h4>
+                                <p class="text-sm text-gray-600">10:23 • By Hayden's Hub Youth Panel</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-md mb-3 flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold">Managing Sensory Overload</h4>
+                                <p class="text-sm text-gray-600">8:45 • By Dr. Sarah Johnson</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-12 bg-cream bg-opacity-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-6">Need More Help?</h2>
+                    <p class="text-xl mb-8">Our team is here to support you. If you have questions or need personalized assistance, please reach out.</p>
+                    
+                    <a href="index.html#contact" class="bg-accent hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition-colors inline-block">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
