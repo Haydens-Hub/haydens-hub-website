@@ -31,20 +31,8 @@ body {
   position: relative;
 }
 
-.nav-item::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #d43f29;
-  transition: width 0.3s;
-}
-
-.nav-item:hover::after,
-.nav-item.active::after {
-  width: 100%;
+.nav-item.active {
+  border-bottom: 2px solid #d43f29;
 }
 
 .resource-card {

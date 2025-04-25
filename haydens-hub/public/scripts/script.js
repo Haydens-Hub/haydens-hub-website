@@ -71,5 +71,39 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+
+    const navLinks = document.querySelectorAll("nav .nav-item");
+    function updateActiveLink() {
+      const currentPath = window.location.pathname;
+      const currentHash = window.location.hash;
+  
+      navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+  
+        // Full page match (like /resources or /advocacy)
+        if (href === currentPath) {
+          link.classList.add("active");
+        }
+        // Section match on homepage (like /#about, /#team)
+        else if (currentPath === "/" && href === "/" + currentHash) {
+          link.classList.add("active");
+        }
+        // Home match (special case for just "/")
+        else if (currentPath === "/" && href === "/#") {
+          if (!currentHash || currentHash === "#") {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
+  
+    updateActiveLink();
+  
+    // Also update on hash change
+    window.addEventListener("hashchange", updateActiveLink);
   });
   
