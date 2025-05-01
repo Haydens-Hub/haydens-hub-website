@@ -278,3 +278,11 @@ thead tr:first-child th {
 .btn {
   transition: all 0.3s ease;
 }
+
+.social-icon {
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
