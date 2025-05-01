@@ -7,14 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#5D8DCD',
-        accent: '#D43F29',
-        olive: '#3F493D',
-        lightBlue: '#CDD6FF',
-        cream: '#E6CFB8',
-        blue: '#3E87B0',
-        grey: '#EFEBEB',
-        green: '#B9E185',
+        primary: '#5D8DCD', //blue shade dark 
+        accent: '#D43F29', //red shade 
+        olive: '#3F493D', //grey-green for footer
+        green: '#B9E185',  
+
+        lightBlue: '#CDD6FF', 
+        lightPurple: '#EFEBEB', 
+        
+        // soft colors - used for tag backgrounds
         softPink: '#FFD6D6',
         softPurple: '#E0D6FF',
         softYellow: '#FFF3D6',

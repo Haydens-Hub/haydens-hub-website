@@ -109,31 +109,10 @@ thead tr:first-child th {
   font-size: 0.75rem;
   font-weight: 500;
   margin: 0.125rem;
-}
-
-.tag-free {
-  background-color: #b9e185;
   color: #3f493d;
-}
-
-.tag-low {
-  background-color: #cdd6ff;
-  color: #3f493d;
-}
-
-.tag-high {
-  background-color: #e6cfb8;
-  color: #3f493d;
-}
-
-.tag-wheelchair {
-  background-color: #5d8dcd;
-  color: white;
-}
-
-.tag-virtual {
-  background-color: #3e87b0;
-  color: white;
+  border-width: 1px;        
+  border-style: solid;       
+  border-color: #5D8DCD;
 }
 
 .filter-active {
@@ -203,7 +182,7 @@ thead tr:first-child th {
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   font-weight: 500;
-  min-width: 180px;
+  min-width: 150px;
 }
 
 .tag:hover {
@@ -214,6 +193,10 @@ thead tr:first-child th {
 .tag.active {
   background-color: #5d8dcd;
   color: white;
+}
+
+.tag-price {
+  min-width: 80px;
 }
 
 /* CTA button styling */
@@ -263,7 +246,7 @@ thead tr:first-child th {
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  color: #black;
+  color: #000;
 }
 
 #intro {
