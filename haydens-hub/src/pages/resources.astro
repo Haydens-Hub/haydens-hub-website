@@ -59,105 +59,6 @@ import Footer from '../components/Footer.astro';
             </div>
         </section>
 
-        <!-- Resource Categories -->
-        <section class="py-12 bg-lightPurple">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold mb-8 text-center">Resources For Everyone</h2>
-                
-                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
-                    <!-- For Caregivers -->
-                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-primary h-3"></div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-4">For Caregivers</h3>
-                            <p class="mb-6">Support resources, self-care tools, and community connections for parents and caregivers.</p>
-                            <ul class="mb-6 space-y-2">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Respite care options</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Support groups</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Educational workshops</span>
-                                </li>
-                            </ul>
-                            <a href="/caregivers" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">View Resources</a>
-                        </div>
-                    </div>
-                    
-                    <!-- For Youth -->
-                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-accent h-3"></div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-4">For Youth</h3>
-                            <p class="mb-6">Programs, activities, and support services designed specifically for youth with special needs.</p>
-                            <ul class="mb-6 space-y-2">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Recreational activities</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Peer connection programs</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Skill-building opportunities</span>
-                                </li>
-                            </ul>
-                            <a href="/youth" class="bg-accent hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">View Resources</a>
-                        </div>
-                    </div>
-                    
-                    <!-- For Community Members -->
-                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-green h-3"></div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-4">For Community</h3>
-                            <p class="mb-6">Information and resources for community members who want to create more inclusive spaces.</p>
-                            <ul class="mb-6 space-y-2">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-green mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Accessibility guidelines</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-green mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Inclusion training</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-green mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Volunteer opportunities</span>
-                                </li>
-                            </ul>
-                            <a href="/community" class="bg-green hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">View Resources</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Resource Database -->
         <section class="py-12 bg-white">
             <div class="container mx-auto px-4">
@@ -380,6 +281,105 @@ import Footer from '../components/Footer.astro';
                             <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-olive hover:bg-lightPurple">3</a>
                             <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-olive hover:bg-lightPurple">Next</a>
                         </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Resource Categories -->
+        <section class="py-12 bg-lightPurple">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Resources For Everyone</h2>
+                
+                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+                    <!-- For Caregivers -->
+                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="bg-primary h-3"></div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4">For Caregivers</h3>
+                            <p class="mb-6">Support resources, self-care tools, and community connections for parents and caregivers.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Respite care options</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Support groups</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Educational workshops</span>
+                                </li>
+                            </ul>
+                            <a href="/caregivers" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">View Resources</a>
+                        </div>
+                    </div>
+                    
+                    <!-- For Youth -->
+                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="bg-accent h-3"></div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4">For Youth</h3>
+                            <p class="mb-6">Programs, activities, and support services designed specifically for youth with special needs.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Recreational activities</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Peer connection programs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Skill-building opportunities</span>
+                                </li>
+                            </ul>
+                            <a href="/youth" class="bg-accent hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">View Resources</a>
+                        </div>
+                    </div>
+                    
+                    <!-- For Community Members -->
+                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="bg-green h-3"></div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4">For Community</h3>
+                            <p class="mb-6">Information and resources for community members who want to create more inclusive spaces.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-green mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Accessibility guidelines</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-green mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Inclusion training</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-green mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Volunteer opportunities</span>
+                                </li>
+                            </ul>
+                            <a href="/community" class="bg-green hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">View Resources</a>
+                        </div>
                     </div>
                 </div>
             </div>
