@@ -1,459 +1,664 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getEntries } from "../lib/contentful";
+
+const rawEntries = await getEntries("resourceDatabaseTable");
+
+const resources = rawEntries.map((entry) => {
+  const fields = entry.fields;
+  return {
+    organizationName: fields.organizationName,
+    formOfSocialPrescribing: fields.formOfSocialPrescribing,
+    description: fields.description,
+    regionOfOttawa: fields.regionOfOttawa,
+    locationFrequency: fields.locationFrequency,
+    pricePoint: fields.pricePoint,
+    accessibility: Array.isArray(fields.accessibility)
+      ? fields.accessibility
+      : fields.accessibility
+        ? [fields.accessibility]
+        : [],
+    link: fields.link || null,
+  };
+});
 ---
+
 <Layout title="Hayden's Hub - Supporting Youth with Special Needs">
   <Header />
-  
+
   <main id="main-content">
-          <!-- Hero Section -->
-        <section class="bg-primary text-white py-12 md:py-16">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-3xl md:text-5xl font-bold mb-6">Our Resource Hub</h1>
-                    <p class="text-xl md:text-2xl">Connecting you with the support and services you need through social prescribing</p>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="bg-primary text-white py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-3xl md:text-5xl font-bold mb-6">Our Resource Hub</h1>
+          <p class="text-xl md:text-2xl">
+            Connecting you with the support and services you need through social
+            prescribing
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Social Prescribing Overview -->
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl font-bold mb-6 text-center">What is Social Prescribing?</h2>
-                    
-                    <div class="bg-lightBlue rounded-lg p-8 mb-10">
-                        <p class="text-lg mb-4">Social prescribing connects people to non-medical support in the community to improve their health and wellbeing. It's a holistic approach that recognizes that health is influenced by a range of social, economic, and environmental factors.</p>
-                        
-                        <p class="text-lg mb-4">Through social prescribing, youth with special needs and their caregivers can be connected to various community resources such as:</p>
-                        
-                        <div class="grid md:grid-cols-3 gap-4 mt-6">
-                            <div class="bg-white p-4 rounded-lg shadow-md text-center">
-                                <svg class="w-12 h-12 mx-auto mb-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                                </svg>
-                                <h3 class="font-bold mb-2">Social Connection</h3>
-                                <p class="text-sm">Peer support groups, community events, and social clubs</p>
-                            </div>
-                            
-                            <div class="bg-white p-4 rounded-lg shadow-md text-center">
-                                <svg class="w-12 h-12 mx-auto mb-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                                </svg>
-                                <h3 class="font-bold mb-2">Skill Development</h3>
-                                <p class="text-sm">Workshops, classes, and training opportunities</p>
-                            </div>
-                            
-                            <div class="bg-white p-4 rounded-lg shadow-md text-center">
-                                <svg class="w-12 h-12 mx-auto mb-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                                    <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
-                                </svg>
-                                <h3 class="font-bold mb-2">Creative Activities</h3>
-                                <p class="text-sm">Arts, music, and other creative outlets</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Social Prescribing Overview -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6 text-center">
+            What is Social Prescribing?
+          </h2>
 
-        <!-- Resource Database -->
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold mb-8 text-center">Resource Database</h2>
+          <div class="bg-lightBlue rounded-lg p-8 mb-10">
+            <p class="text-lg mb-4">
+              Social prescribing connects people to non-medical support in the
+              community to improve their health and wellbeing. It's a holistic
+              approach that recognizes that health is influenced by a range of
+              social, economic, and environmental factors.
+            </p>
+
+            <p class="text-lg mb-4">
+              Through social prescribing, youth with special needs and their
+              caregivers can be connected to various community resources such
+              as:
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4 mt-6">
+              <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                <svg
+                  class="w-12 h-12 mx-auto mb-3 text-primary"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <h3 class="font-bold mb-2">Social Connection</h3>
+                <p class="text-sm">
+                  Peer support groups, community events, and social clubs
+                </p>
+              </div>
+
+              <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                <svg
+                  class="w-12 h-12 mx-auto mb-3 text-primary"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <h3 class="font-bold mb-2">Skill Development</h3>
+                <p class="text-sm">
+                  Workshops, classes, and training opportunities
+                </p>
+              </div>
+
+              <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                <svg
+                  class="w-12 h-12 mx-auto mb-3 text-primary"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                    clip-rule="evenodd"></path>
+                  <path
+                    d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"
+                  ></path>
+                </svg>
+                <h3 class="font-bold mb-2">Creative Activities</h3>
+                <p class="text-sm">Arts, music, and other creative outlets</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resource Database -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Resource Database</h2>
+
+        <div class="max-w-6xl mx-auto">
+          <!-- Filters -->
+          <div class="bg-lightBlue p-6 rounded-lg mb-8">
+            <h3 class="text-xl font-bold mb-4">Filter Resources</h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <!-- Resource Type Filter -->
+              <div>
+                <label
+                  for="resource-type"
+                  class="block text-sm font-medium mb-2">Resource Type</label
+                >
+                <select
+                  id="resource-type"
+                  class="w-full p-2 border border-gray-300 rounded-md"
+                >
+                  <option value="">All Types</option>
+                  <option value="Social Connection">Social Connection</option>
+                  <option value="Academic Support">Academic Support</option>
+                  <option value="Creative & Recreational"
+                    >Creative &amp; Recreational</option
+                  >
+                  <option value="Skill Development">Skill Development</option>
+                  <option value="Specific Needs Support"
+                    >Specific Needs Support</option
+                  >
+                  <option value="Issue-Based Services"
+                    >Issue-Based Services</option
+                  >
+                  <option value="Outdoor & Nature-Based"
+                    >Outdoor &amp; Nature-Based</option
+                  >
+                  <option value="Volunteering">Volunteering</option>
+                </select>
+              </div>
+
+              <!-- Region Filter -->
+              <div>
+                <label for="region" class="block text-sm font-medium mb-2"
+                  >Region</label
+                >
+                <select
+                  id="region"
+                  class="w-full p-2 border border-gray-300 rounded-md"
+                >
+                  <option value="">All Regions</option>
+                  <option value="Downtown Ottawa">Downtown Ottawa</option>
+                  <option value="Centretown">Centretown</option>
+                  <option value="Westboro">Westboro</option>
+                  <option value="Nepean">Nepean</option>
+                  <option value="Barrhaven">Barrhaven</option>
+                  <option value="Kanata">Kanata</option>
+                  <option value="Orleans">Orleans</option>
+                </select>
+              </div>
+
+              <!-- Accessibility Filter -->
+              <div>
+                <label class="block text-sm font-medium mb-2"
+                  >Accessibility</label
+                >
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors"
+                    data-filter="wheelchair">Wheelchair Accessible</button
+                  >
+                  <button
+                    class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors"
+                    data-filter="virtual">Virtual Option</button
+                  >
+                </div>
+              </div>
+
+              <!-- Cost Filter -->
+              <div>
+                <label class="block text-sm font-medium mb-2">Cost</label>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors"
+                    data-filter="free">Free</button
+                  >
+                  <button
+                    class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors"
+                    data-filter="low-cost">Low</button
+                  >
+                  <button
+                    class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors"
+                    data-filter="high-cost">High</button
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Search -->
+            <div class="mt-4">
+              <label for="search" class="block text-sm font-medium mb-2"
+                >Search</label
+              >
+              <input
+                type="text"
+                id="search"
+                placeholder="Search resources..."
+                class="w-full p-2 border border-gray-300 rounded-md"
+              />
+            </div>
+
+            <div class="mt-4 flex justify-end">
+              <button
+                id="apply-filters"
+                class="bg-darkGreen hover:bg-green text-white font-bold py-2 px-4 rounded transition-colors"
+                >Apply Filters</button
+              >
+              <button
+                id="clear-filters"
+                class="bg-accent hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors ml-2"
+                >Clear Filters</button
+              >
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="overflow-x-auto bg-white rounded-lg shadow">
+            <table class="resource-table w-full">
+              <thead>
+                <tr>
+                  <th class="px-4 py-3 text-left bg-primary text-white"
+                    >Organization Name</th
+                  >
+                  <th class="px-4 py-3 text-left bg-primary text-white"
+                    >Form of Social Prescribing</th
+                  >
+                  <th class="px-4 py-3 text-left bg-primary text-white"
+                    >Description</th
+                  >
+                  <th class="px-4 py-3 text-left bg-primary text-white"
+                    >Region of Ottawa</th
+                  >
+                  <th class="px-4 py-3 text-left bg-primary text-white"
+                    >Location / Frequency</th
+                  >
+                  <th class="px-4 py-3 text-left bg-primary text-white"
+                    >Accessibility</th
+                  >
+                  <th class="px-4 py-3 text-left bg-primary text-white"
+                    >Price Point</th
+                  >
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  resources.map((resource) => (
+                    <tr class="border-b hover:bg-lightPurple">
+                      <td class="px-4 py-3">
+                        {resource.link ? (
+                          <a
+                            href={String(resource.link)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-primary hover:text-accent underline font-medium"
+                          >
+                            {resource.organizationName}
+                          </a>
+                        ) : (
+                          resource.organizationName
+                        )}
+                      </td>
+                      <td class="px-4 py-3">
+                        {resource.formOfSocialPrescribing}
+                      </td>
+                      <td class="px-4 py-3">{resource.description}</td>
+                      <td class="px-4 py-3">{resource.regionOfOttawa}</td>
+                      <td class="px-4 py-3">{resource.locationFrequency}</td>
+                      <td class="px-4 py-3 text-center">
+                        {(Array.isArray(resource.accessibility)
+                          ? resource.accessibility
+                          : [resource.accessibility]
+                        )
+                          .filter(Boolean)
+                          .map((label) => (
+                            <span class="tag tag-accessibility">{label}</span>
+                          ))}
+                      </td>
+                      <td class="px-4 py-3 text-center">
+                        <span class="tag tag-price">{resource.pricePoint}</span>
+                      </td>
+                    </tr>
+                  ))
+                }
                 
-                <div class="max-w-6xl mx-auto">
-                    <!-- Filters -->
-                    <div class="bg-lightBlue p-6 rounded-lg mb-8">
-                        <h3 class="text-xl font-bold mb-4">Filter Resources</h3>
-                        
-                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <!-- Resource Type Filter -->
-                            <div>
-                                <label for="resource-type" class="block text-sm font-medium mb-2">Resource Type</label>
-                                <select id="resource-type" class="w-full p-2 border border-gray-300 rounded-md">
-                                    <option value="">All Types</option>
-                                    <option value="Social Connection">Social Connection</option>
-                                    <option value="Academic Support">Academic Support</option>
-                                    <option value="Creative &amp; Recreational">Creative &amp; Recreational</option>
-                                    <option value="Skill Development">Skill Development</option>
-                                    <option value="Specific Needs Support">Specific Needs Support</option>
-                                    <option value="Issue-Based Services">Issue-Based Services</option>
-                                    <option value="Outdoor &amp; Nature-Based">Outdoor &amp; Nature-Based</option>
-                                    <option value="Volunteering">Volunteering</option>
-                                </select>
-                            </div>
-                            
-                            <!-- Region Filter -->
-                            <div>
-                                <label for="region" class="block text-sm font-medium mb-2">Region</label>
-                                <select id="region" class="w-full p-2 border border-gray-300 rounded-md">
-                                    <option value="">All Regions</option>
-                                    <option value="Downtown Ottawa">Downtown Ottawa</option>
-                                    <option value="Centretown">Centretown</option>
-                                    <option value="Westboro">Westboro</option>
-                                    <option value="Nepean">Nepean</option>
-                                    <option value="Barrhaven">Barrhaven</option>
-                                    <option value="Kanata">Kanata</option>
-                                    <option value="Orleans">Orleans</option>
-                                </select>
-                            </div>
-                            
-                            <!-- Accessibility Filter -->
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Accessibility</label>
-                                <div class="flex flex-wrap gap-2">
-                                    <button class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors" data-filter="wheelchair">Wheelchair Accessible</button>
-                                    <button class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors" data-filter="virtual">Virtual Option</button>
-                                </div>
-                            </div>
-                            
-                            <!-- Cost Filter -->
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Cost</label>
-                                <div class="flex flex-wrap gap-2">
-                                    <button class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors" data-filter="free">Free</button>
-                                    <button class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors" data-filter="low-cost">Low</button>
-                                    <button class="filter-btn px-3 py-1 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-colors" data-filter="high-cost">High</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Search -->
-                        <div class="mt-4">
-                            <label for="search" class="block text-sm font-medium mb-2">Search</label>
-                            <input type="text" id="search" placeholder="Search resources..." class="w-full p-2 border border-gray-300 rounded-md">
-                        </div>
-                        
-                        <div class="mt-4 flex justify-end">
-                            <button id="clear-filters" class="bg-accent hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors">Clear Filters</button>
-                        </div>
-                    </div>
-                    
-                    <!-- Table -->
-                    <div class="overflow-x-auto bg-white rounded-lg shadow">
-                        <table class="resource-table w-full">
-                            <thead>
-                                <tr>
-                                    <th class="px-4 py-3 text-left bg-primary text-white">Organization Name</th>
-                                    <th class="px-4 py-3 text-left bg-primary text-white">Form of Social Prescribing</th>
-                                    <th class="px-4 py-3 text-left bg-primary text-white">Description</th>
-                                    <th class="px-4 py-3 text-left bg-primary text-white">Region of Ottawa</th>
-                                    <th class="px-4 py-3 text-left bg-primary text-white">Location / Frequency</th>
-                                    <th class="px-4 py-3 text-left bg-primary text-white">Accessibility</th>
-                                    <th class="px-4 py-3 text-left bg-primary text-white">Price Point</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Resource 1 -->
-                                <tr class="border-b hover:bg-lightPurple">
-                                    <td class="px-4 py-3"><a href="https://www.example.org" target="_blank" class="text-primary hover:text-accent underline font-medium">Ottawa Youth Services</a></td>
-                                    <td class="px-4 py-3">Social Connection</td>
-                                    <td class="px-4 py-3">Weekly peer support groups for youth with special needs</td>
-                                    <td class="px-4 py-3">Downtown Ottawa</td>
-                                    <td class="px-4 py-3">Every Tuesday, 4-6pm</td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag">Wheelchair accessible</span>
-                                    </td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-price">Free</span>
-                                    </td>
-                                </tr>
-                                
-                                <!-- Resource 2 -->
-                                <tr class="border-b hover:bg-lightPurple">
-                                    <td class="px-4 py-3"><a href="https://www.example.org" target="_blank" class="text-primary hover:text-accent underline font-medium">Creative Minds Studio</a></td>
-                                    <td class="px-4 py-3">Creative &amp; Recreational Activities</td>
-                                    <td class="px-4 py-3">Art therapy sessions for youth with anxiety and depression</td>
-                                    <td class="px-4 py-3">Westboro</td>
-                                    <td class="px-4 py-3">Mondays and Wednesdays, 5-7pm</td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-wheelchair">Wheelchair accessible</span>
-                                        <span class="tag tag-virtual">Virtual Option</span>
-                                    </td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-price">Low</span>
-                                    </td>
-                                </tr>
-                                
-                                <!-- Resource 3 -->
-                                <tr class="border-b hover:bg-lightPurple">
-                                    <td class="px-4 py-3"><a href="https://www.example.org" target="_blank" class="text-primary hover:text-accent underline font-medium">Tech Buddies</a></td>
-                                    <td class="px-4 py-3">Skill Development</td>
-                                    <td class="px-4 py-3">Computer coding classes for youth with autism</td>
-                                    <td class="px-4 py-3">Kanata</td>
-                                    <td class="px-4 py-3">Saturdays, 10am-12pm</td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-virtual">Virtual Option</span>
-                                    </td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-price">High</span>
-                                    </td>
-                                </tr>
-                                
-                                <!-- Resource 4 -->
-                                <tr class="border-b hover:bg-lightPurple">
-                                    <td class="px-4 py-3"><a href="https://www.example.org" target="_blank" class="text-primary hover:text-accent underline font-medium">Outdoor Adventures</a></td>
-                                    <td class="px-4 py-3">Outdoor &amp; Nature-Based</td>
-                                    <td class="px-4 py-3">Accessible hiking and nature exploration for youth with mobility challenges</td>
-                                    <td class="px-4 py-3">Nepean</td>
-                                    <td class="px-4 py-3">Monthly outings, weekends</td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-wheelchair">Wheelchair accessible</span>
-                                    </td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-price">Low</span>
-                                    </td>
-                                </tr>
-                                
-                                <!-- Resource 5 -->
-                                <tr class="border-b hover:bg-lightPurple">
-                                    <td class="px-4 py-3"><a href="https://www.example.org" target="_blank" class="text-primary hover:text-accent underline font-medium">Study Buddies</a></td>
-                                    <td class="px-4 py-3">Academic Support</td>
-                                    <td class="px-4 py-3">Tutoring services for youth with learning disabilities</td>
-                                    <td class="px-4 py-3">Centretown</td>
-                                    <td class="px-4 py-3">Weekdays after school, 3-6pm</td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-virtual">Virtual Option</span>
-                                    </td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-price">Free</span>
-                                    </td>
-                                </tr>
-                                
-                                <!-- Resource 6 -->
-                                <tr class="border-b hover:bg-lightPurple">
-                                    <td class="px-4 py-3"><a href="https://www.example.org" target="_blank" class="text-primary hover:text-accent underline font-medium">Sensory Space</a></td>
-                                    <td class="px-4 py-3">Specific Needs Support</td>
-                                    <td class="px-4 py-3">Sensory-friendly play space for youth with sensory processing disorders</td>
-                                    <td class="px-4 py-3">Orleans</td>
-                                    <td class="px-4 py-3">Open daily, 9am-7pm</td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-wheelchair">Wheelchair accessible</span>
-                                    </td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-price">Low</span>
-                                    </td>
-                                </tr>
-                                
-                                <!-- Resource 7 -->
-                                <tr class="border-b hover:bg-lightPurple">
-                                    <td class="px-4 py-3"><a href="https://www.example.org" target="_blank" class="text-primary hover:text-accent underline font-medium">Youth Voices</a></td>
-                                    <td class="px-4 py-3">Issue-Based Services</td>
-                                    <td class="px-4 py-3">Advocacy training for youth with disabilities</td>
-                                    <td class="px-4 py-3">Downtown Ottawa</td>
-                                    <td class="px-4 py-3">Bi-weekly workshops, Thursdays 5-7pm</td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-wheelchair">Wheelchair accessible</span>
-                                        <span class="tag tag-virtual">Virtual Option</span>
-                                    </td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-price">Free</span>
-                                    </td>
-                                </tr>
-                                
-                                <!-- Resource 8 -->
-                                <tr class="hover:bg-lightPurple">
-                                    <td class="px-4 py-3"><a href="https://www.example.org" target="_blank" class="text-primary hover:text-accent underline font-medium">Community Helpers</a></td>
-                                    <td class="px-4 py-3">Volunteering</td>
-                                    <td class="px-4 py-3">Inclusive volunteer opportunities for youth with special needs</td>
-                                    <td class="px-4 py-3">Barrhaven</td>
-                                    <td class="px-4 py-3">Flexible schedule, year-round</td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-wheelchair">Wheelchair accessible</span>
-                                    </td>
-                                    <td class="px-4 py-3 text-center">
-                                        <span class="tag tag-price">Free</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <!-- Pagination -->
-                    <div class="mt-6 flex justify-center">
-                        <nav class="inline-flex rounded-md shadow">
-                            <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-olive hover:bg-lightPurple">Previous</a>
-                            <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-primary text-white">1</a>
-                            <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-olive hover:bg-lightPurple">2</a>
-                            <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-olive hover:bg-lightPurple">3</a>
-                            <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-olive hover:bg-lightPurple">Next</a>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </section>
+              </tbody>
+            </table>
+          </div>
 
-                <!-- Resource Categories -->
-        <section class="py-12 bg-lightPurple">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold mb-8 text-center">Resources For Everyone</h2>
-                
-                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
-                    <!-- For Caregivers -->
-                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-primary h-3"></div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-4">For Caregivers</h3>
-                            <p class="mb-6">Support resources, self-care tools, and community connections for parents and caregivers.</p>
-                            <ul class="mb-6 space-y-2">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Respite care options</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Support groups</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Educational workshops</span>
-                                </li>
-                            </ul>
-                            <a href="/caregivers" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">View Resources</a>
-                        </div>
-                    </div>
-                    
-                    <!-- For Youth -->
-                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-accent h-3"></div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-4">For Youth</h3>
-                            <p class="mb-6">Programs, activities, and support services designed specifically for youth with special needs.</p>
-                            <ul class="mb-6 space-y-2">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Recreational activities</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Peer connection programs</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Skill-building opportunities</span>
-                                </li>
-                            </ul>
-                            <a href="/youth" class="bg-accent hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">View Resources</a>
-                        </div>
-                    </div>
-                    
-                    <!-- For Community Members -->
-                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-green h-3"></div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-4">For Community</h3>
-                            <p class="mb-6">Information and resources for community members who want to create more inclusive spaces.</p>
-                            <ul class="mb-6 space-y-2">
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-green mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Accessibility guidelines</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-green mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Inclusion training</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="w-5 h-5 text-green mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>Volunteer opportunities</span>
-                                </li>
-                            </ul>
-                            <a href="/community" class="bg-green hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block">View Resources</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <!-- Pagination -->
+          <!-- <div class="mt-6 flex justify-center">
+            <nav class="inline-flex rounded-md shadow">
+              <a
+                href="#"
+                class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-olive hover:bg-lightPurple"
+                >Previous</a
+              >
+              <a
+                href="#"
+                class="px-3 py-2 border-t border-b border-gray-300 bg-primary text-white"
+                >1</a
+              >
+              <a
+                href="#"
+                class="px-3 py-2 border-t border-b border-gray-300 bg-white text-olive hover:bg-lightPurple"
+                >2</a
+              >
+              <a
+                href="#"
+                class="px-3 py-2 border-t border-b border-gray-300 bg-white text-olive hover:bg-lightPurple"
+                >3</a
+              >
+              <a
+                href="#"
+                class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-olive hover:bg-lightPurple"
+                >Next</a
+              >
+            </nav>
+          </div> -->
+        </div>
+      </div>
+    </section>
 
-        <!-- Download Resources -->
-        <section class="py-12 bg-lightBlue">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold mb-8 text-center">Downloadable Resources</h2>
-                
-                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-                    <!-- Resource 1 -->
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-bold mb-3">Resource Navigation Guide</h3>
-                        <p class="mb-4">A comprehensive guide to help you navigate available resources for youth with special needs in Ottawa.</p>
-                        <a href="#" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-flex items-center">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                            Download PDF
-                        </a>
-                    </div>
-                    
-                    <!-- Resource 2 -->
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-bold mb-3">Caregiver Self-Care Toolkit</h3>
-                        <p class="mb-4">Practical strategies and resources to support the wellbeing of caregivers of youth with special needs.</p>
-                        <a href="#" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-flex items-center">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                            Download PDF
-                        </a>
-                    </div>
-                    
-                    <!-- Resource 3 -->
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-bold mb-3">Accessibility Checklist</h3>
-                        <p class="mb-4">A checklist for community organizations to assess and improve the accessibility of their programs and spaces.</p>
-                        <a href="#" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-flex items-center">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                            Download PDF
-                        </a>
-                    </div>
-                    
-                    <!-- Resource 4 -->
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-bold mb-3">Transition Planning Workbook</h3>
-                        <p class="mb-4">A workbook to help youth with special needs and their caregivers plan for transitions between schools, programs, or into adulthood.</p>
-                        <a href="#" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-flex items-center">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                            Download PDF
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Resource Categories -->
+    <section class="py-12 bg-lightPurple">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">
+          Resources For Everyone
+        </h2>
 
-        <!-- Contact for Resources -->
-        <section class="py-12 bg-primary text-white">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold mb-6">Need Help Finding Resources?</h2>
-                    <p class="text-xl mb-8">Our Resource Coordinator can help you navigate available services and find the right support for your specific needs.</p>
-                    <div class="flex justify-center">
-                        <a href="/#contact" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg transition-colors text-center text-lg">Contact Us</a>
-                    </div>
-                </div>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+          <!-- For Caregivers -->
+          <div
+            class="resource-card bg-white rounded-lg shadow-md overflow-hidden"
+          >
+            <div class="bg-primary h-3"></div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-4">For Caregivers</h3>
+              <p class="mb-6">
+                Support resources, self-care tools, and community connections
+                for parents and caregivers.
+              </p>
+              <ul class="mb-6 space-y-2">
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-primary mt-0.5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Respite care options</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-primary mt-0.5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Support groups</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-primary mt-0.5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Educational workshops</span>
+                </li>
+              </ul>
+              <a
+                href="/caregivers"
+                class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block"
+                >View Resources</a
+              >
             </div>
-        </section>
+          </div>
+
+          <!-- For Youth -->
+          <div
+            class="resource-card bg-white rounded-lg shadow-md overflow-hidden"
+          >
+            <div class="bg-accent h-3"></div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-4">For Youth</h3>
+              <p class="mb-6">
+                Programs, activities, and support services designed specifically
+                for youth with special needs.
+              </p>
+              <ul class="mb-6 space-y-2">
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-accent mt-0.5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Recreational activities</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-accent mt-0.5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Peer connection programs</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-accent mt-0.5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Skill-building opportunities</span>
+                </li>
+              </ul>
+              <a
+                href="/youth"
+                class="bg-accent hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block"
+                >View Resources</a
+              >
+            </div>
+          </div>
+
+          <!-- For Community Members -->
+          <div
+            class="resource-card bg-white rounded-lg shadow-md overflow-hidden"
+          >
+            <div class="bg-green h-3"></div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-4">For Community</h3>
+              <p class="mb-6">
+                Information and resources for community members who want to
+                create more inclusive spaces.
+              </p>
+              <ul class="mb-6 space-y-2">
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green mt-0.5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Accessibility guidelines</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green mt-0.5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Inclusion training</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green mt-0.5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Volunteer opportunities</span>
+                </li>
+              </ul>
+              <a
+                href="/community"
+                class="bg-green hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors inline-block"
+                >View Resources</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Resources -->
+    <section class="py-12 bg-lightBlue">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">
+          Downloadable Resources
+        </h2>
+
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+          <!-- Resource 1 -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-3">Resource Navigation Guide</h3>
+            <p class="mb-4">
+              A comprehensive guide to help you navigate available resources for
+              youth with special needs in Ottawa.
+            </p>
+            <a
+              href="#"
+              class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-flex items-center"
+            >
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Download PDF
+            </a>
+          </div>
+
+          <!-- Resource 2 -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-3">Caregiver Self-Care Toolkit</h3>
+            <p class="mb-4">
+              Practical strategies and resources to support the wellbeing of
+              caregivers of youth with special needs.
+            </p>
+            <a
+              href="#"
+              class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-flex items-center"
+            >
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Download PDF
+            </a>
+          </div>
+
+          <!-- Resource 3 -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-3">Accessibility Checklist</h3>
+            <p class="mb-4">
+              A checklist for community organizations to assess and improve the
+              accessibility of their programs and spaces.
+            </p>
+            <a
+              href="#"
+              class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-flex items-center"
+            >
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Download PDF
+            </a>
+          </div>
+
+          <!-- Resource 4 -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-3">Transition Planning Workbook</h3>
+            <p class="mb-4">
+              A workbook to help youth with special needs and their caregivers
+              plan for transitions between schools, programs, or into adulthood.
+            </p>
+            <a
+              href="#"
+              class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors inline-flex items-center"
+            >
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Download PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact for Resources -->
+    <section class="py-12 bg-primary text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">Need Help Finding Resources?</h2>
+          <p class="text-xl mb-8">
+            Our Resource Coordinator can help you navigate available services
+            and find the right support for your specific needs.
+          </p>
+          <div class="flex justify-center">
+            <a
+              href="/#contact"
+              class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg transition-colors text-center text-lg"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />

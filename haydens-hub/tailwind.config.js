@@ -19,7 +19,9 @@ export default {
         softPink: '#FFD6D6',
         softPurple: '#E0D6FF',
         softYellow: '#FFF3D6',
-        softGreen: '#D6FFE0'
+        softGreen: '#D6FFE0',
+
+        darkGreen: '#01851bff'
       },
       fontFamily: {
         sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
