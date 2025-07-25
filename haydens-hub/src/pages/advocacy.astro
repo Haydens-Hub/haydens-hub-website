@@ -1,245 +1,256 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getAllBlogs } from "../lib/contentful.js";
+import type { Entry } from "contentful";
+
+const blogs = await getAllBlogs();
+
+function isContentfulEntry(item: unknown): item is Entry<any> {
+  return typeof item === "object" && item !== null && "fields" in item;
+}
 ---
+
 <Layout title="Advocacy">
   <Header />
-  
+
   <main id="main-content">
-        <!-- Hero Section with CTA Buttons -->
+    <!-- Hero Section with CTA Buttons -->
     <section class="bg-primary text-white py-12 md:py-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-3xl md:text-5xl font-bold mb-6">Advocacy &amp; Research</h1>
-                <p class="text-xl md:text-2xl mb-10">Join our community of advocates working to create positive change for youth with special needs</p>
-                
-                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-                    <a href="https://forms.gle/nTFMQ5u3nz9exZH17" target="_blank" rel="noopener noreferrer" class="cta-button bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center min-w-[180px]">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd"></path>
-                        </svg>
-                        Submit Article
-                    </a>
-                    <a href="/guidelines" class="cta-button bg-accent hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center min-w-[180px]">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
-                        </svg>
-                        View Guidelines
-                    </a>
-                    <a href="mailto:research@haydenshub.org" class="cta-button bg-olive hover:bg-green-900 text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center min-w-[180px]">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                        </svg>
-                        Contact Research Team
-                    </a>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-3xl md:text-5xl font-bold mb-6">
+            Advocacy &amp; Research
+          </h1>
+          <p class="text-xl md:text-2xl mb-10">
+            Join our community of advocates working to create positive change
+            for youth with special needs
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+            <a
+              href="https://forms.gle/nTFMQ5u3nz9exZH17"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center min-w-[180px]"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Submit Article
+            </a>
+            <a
+              href="/guidelines"
+              class="cta-button bg-accent hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center min-w-[180px]"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              View Guidelines
+            </a>
+            <a
+              href="mailto:research@haydenshub.org"
+              class="cta-button bg-olive hover:bg-green-900 text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center min-w-[180px]"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                ></path>
+                <path
+                  d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                ></path>
+              </svg>
+              Contact Research Team
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Introduction Section -->
     <section class="bg-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-6 text-center">Amplifying Voices, Creating Change</h2>
-                
-                <div class="bg-lightBlue rounded-lg p-8 mb-10">
-                    <p class="text-lg mb-4">At Hayden's Hub, we believe that effective advocacy starts with sharing real experiences and evidence-based research. Our advocacy platform brings together diverse perspectives from youth with special needs, caregivers, professionals, and community members.</p>
-                    
-                    <p class="text-lg mb-4">Through our articles, research summaries, and policy recommendations, we aim to inform, educate, and inspire action that leads to meaningful change in our communities.</p>
-                    
-                    <p class="text-lg">We invite you to explore our collection of advocacy resources, contribute your own insights, and join us in creating a more inclusive and supportive world for youth with special needs.</p>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6 text-center">
+            Amplifying Voices, Creating Change
+          </h2>
+
+          <div class="bg-lightBlue rounded-lg p-8 mb-10">
+            <p class="text-lg mb-4">
+              At Hayden's Hub, we believe that effective advocacy starts with
+              sharing real experiences and evidence-based research. Our advocacy
+              platform brings together diverse perspectives from youth with
+              special needs, caregivers, professionals, and community members.
+            </p>
+
+            <p class="text-lg mb-4">
+              Through our articles, research summaries, and policy
+              recommendations, we aim to inform, educate, and inspire action
+              that leads to meaningful change in our communities.
+            </p>
+
+            <p class="text-lg">
+              We invite you to explore our collection of advocacy resources,
+              contribute your own insights, and join us in creating a more
+              inclusive and supportive world for youth with special needs.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Article Filter Section -->
     <section class="py-8 bg-grey">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-2xl font-bold mb-6">Filter Articles By Topic</h2>
-                
-                <div class="flex flex-wrap gap-3 mb-8">
-                    <button class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium active" data-tag="all">
-                        All Topics
-                    </button>
-                    <button class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium" data-tag="education">
-                        Education
-                    </button>
-                    <button class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium" data-tag="healthcare">
-                        Healthcare
-                    </button>
-                    <button class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium" data-tag="policy">
-                        Policy
-                    </button>
-                    <button class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium" data-tag="community">
-                        Community
-                    </button>
-                    <button class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium" data-tag="research">
-                        Research
-                    </button>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-2xl font-bold mb-6">Filter Articles By Topic</h2>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <button
+              class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium active"
+              data-tag="all"
+            >
+              All Topics
+            </button>
+            <button
+              class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium"
+              data-tag="Academic Article"
+            >
+              Academic Article
+            </button>
+            <button
+              class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium"
+              data-tag="Youth Voices"
+            >
+              Youth Voices
+            </button>
+            <button
+              class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium"
+              data-tag="Community Spotlight"
+            >
+              Community Spotlight
+            </button>
+            <button
+              class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium"
+              data-tag="Creative"
+            >
+              Creative
+            </button>
+            <button
+              class="tag px-4 py-2 rounded-full bg-white border border-primary text-primary font-medium"
+              data-tag="Advocacy"
+            >
+              Advocacy
+            </button>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Articles Section -->
     <section class="py-8 bg-grey">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Article 1 -->
-                    <article class="article-card bg-white rounded-lg shadow-md overflow-hidden" data-tags="education policy" style="display: block;">
-                        <a href="/blog" class="block h-full">
-                            <div class="p-6">
-                                <div class="flex flex-wrap gap-2 mb-3">
-                                    <span class="bg-softPink text-accent text-sm font-medium px-3 py-1 rounded-full">Education</span>
-                                    <span class="bg-softPurple text-blue text-sm font-medium px-3 py-1 rounded-full">Policy</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 text-primary hover:text-accent transition-colors">Inclusive Education: Beyond the Classroom</h3>
-                                <p class="text-gray-600 text-sm mb-3">May 15, 2023 • By Dr. Sarah Johnson</p>
-                                <p class="mb-4">Exploring how inclusive education practices can extend beyond traditional classroom settings to create holistic learning environments that support all students' needs and strengths.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-primary font-semibold hover:text-accent transition-colors flex items-center">
-                                        Read more
-                                        <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    
-                    <!-- Article 2 -->
-                    <article class="article-card bg-white rounded-lg shadow-md overflow-hidden" data-tags="healthcare research" style="display: block;">
-                        <a href="/blog" class="block h-full">
-                            <div class="p-6">
-                                <div class="flex flex-wrap gap-2 mb-3">
-                                    <span class="bg-softGreen text-green-700 text-sm font-medium px-3 py-1 rounded-full">Healthcare</span>
-                                    <span class="bg-softYellow text-yellow-700 text-sm font-medium px-3 py-1 rounded-full">Research</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 text-primary hover:text-accent transition-colors">New Research on Sensory Processing Interventions</h3>
-                                <p class="text-gray-600 text-sm mb-3">April 28, 2023 • By Michael Chen, PhD</p>
-                                <p class="mb-4">A summary of recent research findings on effective sensory processing interventions and how they can be implemented in various settings to support youth with sensory processing differences.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-primary font-semibold hover:text-accent transition-colors flex items-center">
-                                        Read more
-                                        <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    
-                    <!-- Article 3 -->
-                    <article class="article-card bg-white rounded-lg shadow-md overflow-hidden" data-tags="community" style="display: block;">
-                        <a href="/blog" class="block h-full">
-                            <div class="p-6">
-                                <div class="flex flex-wrap gap-2 mb-3">
-                                    <span class="bg-softPink text-accent text-sm font-medium px-3 py-1 rounded-full">Community</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 text-primary hover:text-accent transition-colors">Building Inclusive Community Spaces: A Guide for Local Organizations</h3>
-                                <p class="text-gray-600 text-sm mb-3">April 10, 2023 • By Priya Patel</p>
-                                <p class="mb-4">Practical strategies for community organizations to create more inclusive spaces and programs that welcome and support youth with diverse needs and abilities.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-primary font-semibold hover:text-accent transition-colors flex items-center">
-                                        Read more
-                                        <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    
-                    <!-- Article 4 -->
-                    <article class="article-card bg-white rounded-lg shadow-md overflow-hidden" data-tags="policy research" style="display: block;">
-                        <a href="/blog" class="block h-full">
-                            <div class="p-6">
-                                <div class="flex flex-wrap gap-2 mb-3">
-                                    <span class="bg-softPurple text-blue text-sm font-medium px-3 py-1 rounded-full">Policy</span>
-                                    <span class="bg-softYellow text-yellow-700 text-sm font-medium px-3 py-1 rounded-full">Research</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 text-primary hover:text-accent transition-colors">Policy Recommendations: Supporting Transitions to Adulthood</h3>
-                                <p class="text-gray-600 text-sm mb-3">March 22, 2023 • By James Wilson, MPP</p>
-                                <p class="mb-4">Evidence-based policy recommendations to improve support systems for youth with special needs as they transition to adulthood, focusing on education, employment, and independent living.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-primary font-semibold hover:text-accent transition-colors flex items-center">
-                                        Read more
-                                        <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    
-                    <!-- Article 5 -->
-                    <article class="article-card bg-white rounded-lg shadow-md overflow-hidden" data-tags="healthcare community" style="display: block;">
-                        <a href="/blog" class="block h-full">
-                            <div class="p-6">
-                                <div class="flex flex-wrap gap-2 mb-3">
-                                    <span class="bg-softGreen text-green-700 text-sm font-medium px-3 py-1 rounded-full">Healthcare</span>
-                                    <span class="bg-softPink text-accent text-sm font-medium px-3 py-1 rounded-full">Community</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 text-primary hover:text-accent transition-colors">Mental Health Support for Youth with Special Needs</h3>
-                                <p class="text-gray-600 text-sm mb-3">March 5, 2023 • By Dr. Emily Rodriguez</p>
-                                <p class="mb-4">Addressing the unique mental health needs of youth with special needs and exploring effective support strategies for families, schools, and healthcare providers.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-primary font-semibold hover:text-accent transition-colors flex items-center">
-                                        Read more
-                                        <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    
-                    <!-- Article 6 -->
-                    <article class="article-card bg-white rounded-lg shadow-md overflow-hidden" data-tags="education research" style="display: block;">
-                        <a href="/blog" class="block h-full">
-                            <div class="p-6">
-                                <div class="flex flex-wrap gap-2 mb-3">
-                                    <span class="bg-softPink text-accent text-sm font-medium px-3 py-1 rounded-full">Education</span>
-                                    <span class="bg-softYellow text-yellow-700 text-sm font-medium px-3 py-1 rounded-full">Research</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 text-primary hover:text-accent transition-colors">Assistive Technology: Innovations and Accessibility</h3>
-                                <p class="text-gray-600 text-sm mb-3">February 18, 2023 • By Alex Thompson, MEd</p>
-                                <p class="mb-4">An overview of recent innovations in assistive technology and strategies for making these tools more accessible and affordable for youth with special needs and their families.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-primary font-semibold hover:text-accent transition-colors flex items-center">
-                                        Read more
-                                        <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-                
-                <!-- No Results Message -->
-                <div id="no-results" class="hidden text-center py-12">
-                    <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">No articles found</h3>
-                    <p class="text-gray-600">Try selecting a different topic filter</p>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8">
+            {
+              blogs.map((blog) => {
+                if (!isContentfulEntry(blog)) return null;
+
+                const fields = blog.fields;
+                const {
+                  title,
+                  shortBlurb,
+                  publishedDate,
+                  categoryType,
+                  author,
+                } = fields;
+
+                const authorName =
+                  Array.isArray(author) && isContentfulEntry(author[0])
+                    ? author[0].fields.authorName
+                    : "Unknown Author";
+
+                const blogUrl = `/blog/${fields.slug}`; 
+
+                return (
+                  <article
+                    class="article-card bg-white rounded-lg shadow-md overflow-hidden"
+                    data-tags={categoryType}
+                    style="display: block;"
+                  >
+                    <a href={blogUrl} class="block h-full">
+                      <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                          <span class="bg-softPink text-accent text-sm font-medium px-3 py-1 rounded-full">
+                            {categoryType}
+                          </span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary hover:text-accent transition-colors">
+                          {title}
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                          {publishedDate
+                            ? new Date(
+                                String(publishedDate)
+                              ).toLocaleDateString("en-US", {
+                                month: "long",
+                                day: "numeric",
+                                year: "numeric",
+                              })
+                            : "Unknown Date"}{" "}
+                          • By {authorName}
+                        </p>
+                        <p class="mb-4">{shortBlurb}</p>
+                        <div class="flex justify-between items-center">
+                          <span class="text-primary font-semibold hover:text-accent transition-colors flex items-center">
+                            Read more
+                            <svg
+                              class="w-4 h-4 ml-1"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                );
+              })
+            }
+          </div>
         </div>
+      </div>
     </section>
+
+    <!-- No Results Message -->
+    <div id="no-results" class="hidden text-center py-12">
+      <svg
+        class="w-16 h-16 text-gray-400 mx-auto mb-4"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+          clip-rule="evenodd"></path>
+      </svg>
+      <h3 class="text-xl font-bold mb-2">No articles found</h3>
+      <p class="text-gray-600">Try selecting a different topic filter</p>
+    </div>
   </main>
-  <Footer />
 </Layout>
+
+<Footer />
