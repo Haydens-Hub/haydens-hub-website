@@ -107,7 +107,7 @@ export async function getStaticPaths() {
           {
             authors.map((author) => (
               <a
-                href={`/author/${getAuthorSlug(author.slug)}`}
+                href={`/author/${author.slug}?from=${Astro.params.slug}`}
                 class="btn inline-block bg-primary hover:bg-indigo-600 text-white font-medium py-2 px-6 rounded transition-colors duration-300"
               >
                 About {author.name}
