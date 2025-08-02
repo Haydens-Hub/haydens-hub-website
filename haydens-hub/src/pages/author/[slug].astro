@@ -13,10 +13,6 @@ if (!author) {
   return Astro.redirect("/404");
 }
 
-function isContentfulEntry(item: unknown): item is Entry<any> {
-  return typeof item === "object" && item !== null && "fields" in item;
-}
-
 function toStringOrNull(value: any): string | null {
   return typeof value === "string" && value.trim() !== "" ? value : null;
 }
@@ -270,7 +266,7 @@ export async function getStaticPaths() {
         </div>
       </div>
     </div>
-  </main>
 
-  <Footer />
+    <Footer />
+  </main>
 </Layout>

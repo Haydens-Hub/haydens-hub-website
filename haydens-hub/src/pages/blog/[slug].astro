@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getAllBlogs } from "../../lib/contentful.js";
+import { renderRichText } from "../../lib/renderRichText.js";
 import type { Entry, Asset } from "contentful";
 
 const { slug } = Astro.params;
@@ -10,7 +11,7 @@ const blogs = await getAllBlogs();
 const blogEntry = blogs.find((entry) => entry.fields.slug === slug);
 
 if (!blogEntry) {
-  return Astro.redirect('/404');
+  return Astro.redirect("/404");
 }
 
 function isContentfulEntry(item: unknown): item is Entry<any> {
@@ -20,14 +21,20 @@ function isContentfulEntry(item: unknown): item is Entry<any> {
 const blog = blogEntry.fields;
 const rawAuthors = blog.author ?? [];
 const authorsArray = Array.isArray(rawAuthors) ? rawAuthors : [rawAuthors];
-const authors = (authorsArray.filter(isContentfulEntry) as Entry<any>[]).map((entry) => {
-  const fields = entry.fields;
-  return {
-    name: fields.authorName,
-    title: fields.authorTitle,
-    slug: getAuthorSlug(typeof fields.slug === "string" ? fields.slug : String(fields.authorName)),
-  };
-});
+const authors = (authorsArray.filter(isContentfulEntry) as Entry<any>[]).map(
+  (entry) => {
+    const fields = entry.fields;
+    return {
+      name: fields.authorName,
+      title: fields.authorTitle,
+      slug: getAuthorSlug(
+        typeof fields.slug === "string"
+          ? fields.slug
+          : String(fields.authorName)
+      ),
+    };
+  }
+);
 
 function getAuthorSlug(name: string) {
   return name.toLowerCase().replace(/\s+/g, "-");
@@ -37,13 +44,16 @@ const pdfAsset = blog.pdf as Asset;
 const pdfUrl = pdfAsset?.fields?.file?.url ?? "";
 const references = Array.isArray(blog.references) ? blog.references : [];
 
+function findAssetById(_id: string) {
+  return null;
+}
+
 export async function getStaticPaths() {
   const blogs = await getAllBlogs();
   return blogs.map((entry) => ({
     params: { slug: entry.fields.slug },
   }));
 }
-
 ---
 
 <Layout title={`Hayden's Hub - ${blog.title}`}>
@@ -119,7 +129,10 @@ export async function getStaticPaths() {
 
       <!-- Main Content -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-6">
-        <div class="article-content" set:html={blog.mainContent} />
+        <div
+          class="article-content"
+          set:html={renderRichText(blog.mainContent, findAssetById)}
+        />
       </div>
 
       <!-- References -->
@@ -127,11 +140,10 @@ export async function getStaticPaths() {
         blog.references && (
           <div class="bg-white rounded-lg shadow-md p-8">
             <h2 class="text-xl font-bold mb-4">References</h2>
-            <ul class="list-disc pl-5 space-y-2 text-gray-700">
-              {references.map((ref) => (
-                <li>{String(ref)}</li> 
-              ))}
-            </ul>
+            <div
+              class="prose max-w-none text-gray-700"
+              set:html={renderRichText(blog.references, findAssetById)}
+            />
           </div>
         )
       }

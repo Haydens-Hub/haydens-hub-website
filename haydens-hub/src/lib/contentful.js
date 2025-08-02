@@ -29,6 +29,6 @@ export async function getAllBlogs() {
 }
 
 export async function getAllAuthors() {
-  const authors = await client.getEntries({ content_type: 'author' });
+  const authors = await client.getEntries({ content_type: 'author', include: 10 });
   return authors.items;
 }
