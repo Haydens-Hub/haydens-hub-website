@@ -311,7 +311,15 @@ const faqs = faqEntries.map((entry) => entry.fields);
 
         <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           <div>
-            <form class="space-y-6">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              class="space-y-6"
+            >
+              <!-- Hidden input for Netlify -->
+              <input type="hidden" name="form-name" value="contact" />
+
               <div>
                 <label for="name" class="block text-sm font-medium mb-1"
                   >Your Name</label
@@ -319,8 +327,9 @@ const faqs = faqEntries.map((entry) => entry.fields);
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   class="w-full p-3 border border-gray-300 rounded-md text-olive"
-                  required=""
+                  required
                 />
               </div>
 
@@ -331,8 +340,9 @@ const faqs = faqEntries.map((entry) => entry.fields);
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   class="w-full p-3 border border-gray-300 rounded-md text-olive"
-                  required=""
+                  required
                 />
               </div>
 
@@ -342,8 +352,9 @@ const faqs = faqEntries.map((entry) => entry.fields);
                 >
                 <select
                   id="subject"
+                  name="subject"
                   class="w-full p-3 border border-gray-300 rounded-md text-olive"
-                  required=""
+                  required
                 >
                   <option value="">Select a subject</option>
                   <option value="general">General Inquiry</option>
@@ -359,17 +370,19 @@ const faqs = faqEntries.map((entry) => entry.fields);
                 >
                 <textarea
                   id="message"
+                  name="message"
                   rows="5"
                   class="w-full p-3 border border-gray-300 rounded-md text-olive"
-                  required=""></textarea>
+                  required></textarea>
               </div>
 
               <div>
                 <button
                   type="submit"
                   class="bg-accent hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
-                  >Send Message</button
                 >
+                  Send Message
+                </button>
               </div>
             </form>
           </div>

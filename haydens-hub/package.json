@@ -12,7 +12,8 @@
     "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.7.5",
     "contentful": "^11.7.10",
-    "marked": "^16.1.1"
+    "marked": "^16.1.1",
+    "resend": "^4.7.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"
