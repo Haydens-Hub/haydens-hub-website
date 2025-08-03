@@ -1,0 +1,125 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getAllGuidelines } from "../../lib/contentful.js";
+import { renderRichText } from "../../lib/renderRichText.js";
+
+const { slug } = Astro.params;
+const guidelines = await getAllGuidelines();
+const selectedGuideline =
+  guidelines.find((g) => g.slug === slug) || guidelines[0];
+
+export async function getStaticPaths() {
+  const guidelines = await getAllGuidelines();
+
+  return guidelines.map((g) => ({
+    params: { slug: g.slug }, // generates /guidelines/[slug]
+    props: { guideline: g },
+  }));
+}
+
+---
+
+<Layout title={`${selectedGuideline.title} - Guidelines`}>
+  <Header />
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="bg-primary text-white py-12 md:py-16 no-print">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-3xl md:text-5xl font-bold mb-6">Article Guidelines</h1>
+        <p class="text-xl md:text-2xl mb-10">
+          Comprehensive guidelines for preparing and submitting articles to
+          Hayden's Hub advocacy platform
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-8">
+          <a
+            href="https://forms.gle/nTFMQ5u3nz9exZH17"
+            target="_blank"
+            class="cta-button bg-white text-primary hover:bg-cream font-bold py-4 px-8 rounded-lg shadow-lg"
+          >
+            Submit Article
+          </a>
+          <a
+            href="mailto:research@haydenshub.org"
+            class="cta-button bg-accent hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg"
+          >
+            Contact Research Team
+          </a>
+        </div>
+
+        <!-- Dropdown -->
+        <div class="max-w-md mx-auto flex justify-center gap-4">
+          <label for="guidelineSelect" class="block text-sm font-medium mb-2"
+            >Choose Article Type</label
+          >
+          <select
+            id="guidelineSelect"
+            class="px-4 py-2 rounded-md text-gray-800 w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            onchange="window.location.href = '/guidelines/' + this.value"
+          >
+            {
+              guidelines.map((g: any) => (
+                <option value={g.slug} selected={g.slug === slug}>
+                  {g.title}
+                </option>
+              ))
+            }
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <div
+      class="container mx-auto px-4 py-8 md:py-12 flex flex-col md:flex-row gap-8"
+    >
+      <!-- TOC Sidebar -->
+      <aside class="md:w-1/4 lg:w-1/5 no-print">
+        <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+          <h2 class="text-xl font-bold mb-4 text-primary">Table of Contents</h2>
+          <nav aria-label="Table of Contents">
+            <ul class="space-y-1" id="tocList">
+              {
+                selectedGuideline.tableOfContents.map((item: any) => (
+                  <li>
+                    <a href={`#${item.slug}`} class="toc-link">
+                      {item.title}
+                    </a>
+
+                    {item.subItems?.length > 0 && (
+                      <ul class="pl-4 space-y-1">
+                        {item.subItems.map((sub: any) => (
+                          <li>
+                            <a href={`#${sub.slug}`} class="toc-link">
+                              {sub.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="md:w-3/4 lg:w-4/5">
+        <div
+          class="bg-white rounded-lg shadow-md p-6 md:p-8 lg:p-10"
+          id="guidelineContent"
+        >
+          <Fragment set:html={renderRichText(selectedGuideline.mainContent)} />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

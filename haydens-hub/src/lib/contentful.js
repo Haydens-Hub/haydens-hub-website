@@ -32,3 +32,37 @@ export async function getAllAuthors() {
   const authors = await client.getEntries({ content_type: 'author', include: 10 });
   return authors.items;
 }
+
+export async function getAllGuidelines() {
+  const res = await client.getEntries({
+    content_type: 'guidelines',
+    include: 10, // depth for tableOfContents
+    order: 'fields.title', // sorts by title alphabetically
+  });
+
+  return res.items.map((item) => {
+    const fields = item.fields;
+
+    return {
+      id: item.sys.id,
+      title: fields.title,
+      slug: fields.slug,
+      description: fields.guidelineType || '',
+      mainContent: fields.contentSections, 
+      assets: item.includes?.Asset || [],
+      tableOfContents: (fields.tableOfContents || []).map((tocItem) => {
+        const tocFields = tocItem.fields || {};
+        return {
+          id: tocItem.sys.id,
+          title: tocFields.title,
+          slug: tocFields.slug,
+          subItems: (tocFields.subheadings || []).map((sub) => ({
+            id: sub.sys.id,
+            title: sub.fields.title,
+            slug: sub.fields.slug,
+          })),
+        };
+      }),
+    };
+  });
+}

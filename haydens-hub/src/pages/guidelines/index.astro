@@ -1,0 +1,10 @@
+---
+import { getAllGuidelines } from "../../lib/contentful.js";
+
+const guidelines = await getAllGuidelines();
+const firstGuideline = guidelines[0];
+
+if (Astro.request.method === "GET") {
+  return Astro.redirect(`/guidelines/${firstGuideline.slug}`);
+}
+---
