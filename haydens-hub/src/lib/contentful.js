@@ -66,3 +66,8 @@ export async function getAllGuidelines() {
     };
   });
 }
+
+export async function getSiteSettings() {
+  const entries = await client.getEntries({ content_type: 'haydensHubAllContacts', limit: 1 });
+  return entries.items[0].fields;
+}
