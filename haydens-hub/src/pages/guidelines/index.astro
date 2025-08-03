@@ -8,11 +8,9 @@ const guidelines = await getAllGuidelines();
 const firstSlug = guidelines[0].slug;
 const firstGuideline = guidelines[0];
 
-if (Astro.request.method === "GET") {
-  return Astro.redirect(`/guidelines/${firstGuideline.slug}`);
-}
-
-export const prerender = false;
+// if (Astro.request.method === "GET") {
+//   return Astro.redirect(`/guidelines/${firstGuideline.slug}`);
+// }
 ---
 
 <Layout title="Redirecting to Guidelines...">
@@ -48,11 +46,15 @@ export const prerender = false;
 
   <Footer />
 
+  <!-- Redirect: meta + JS -->
+  <meta
+    http-equiv="refresh"
+    content={`2;url=/guidelines/${firstGuideline.slug}`}
+  />
   <script>
-    // Pass firstSlug into JS by embedding it as a string
-    const firstSlug = "{firstSlug}";
+    const redirectSlug = "{firstGuideline.slug}"; // Inlined from Astro
     setTimeout(() => {
-      window.location.href = `/guidelines/${firstSlug}`;
+      window.location.href = `/guidelines/${redirectSlug}`;
     }, 3000);
   </script>
 
