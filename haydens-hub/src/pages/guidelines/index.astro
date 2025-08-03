@@ -1,10 +1,72 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 import { getAllGuidelines } from "../../lib/contentful.js";
 
 const guidelines = await getAllGuidelines();
+const firstSlug = guidelines[0].slug;
 const firstGuideline = guidelines[0];
 
 if (Astro.request.method === "GET") {
   return Astro.redirect(`/guidelines/${firstGuideline.slug}`);
 }
 ---
+
+<Layout title="Redirecting to Guidelines...">
+  <Header />
+
+  <main class="text-center py-20 px-4 bg-white text-olive">
+    <div class="container mx-auto px-4">
+      <div
+        class="bg-white rounded-lg shadow-md p-8 max-w-md mx-auto text-center animate-fade-in"
+      >
+        <div class="flex justify-center mb-6">
+          <div class="animate-bounce w-3 h-3 bg-primary rounded-full mx-1">
+          </div>
+          <div
+            class="animate-bounce w-3 h-3 bg-primary rounded-full mx-1 [animation-delay:0.2s]"
+          >
+          </div>
+          <div
+            class="animate-bounce w-3 h-3 bg-primary rounded-full mx-1 [animation-delay:0.4s]"
+          >
+          </div>
+        </div>
+
+        <h1 class="text-2xl font-bold text-gray-800 mb-3">
+          Redirecting you to our guidelines page...
+        </h1>
+        <p class="text-gray-600 mb-6">
+          Just a moment, we’re opening your guidelines.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+
+  <script>
+    // Pass firstSlug into JS by embedding it as a string
+    const firstSlug = "{firstSlug}";
+    setTimeout(() => {
+      window.location.href = `/guidelines/${firstSlug}`;
+    }, 3000);
+  </script>
+
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</Layout>
