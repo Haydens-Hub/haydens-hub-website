@@ -11,6 +11,8 @@ const firstGuideline = guidelines[0];
 if (Astro.request.method === "GET") {
   return Astro.redirect(`/guidelines/${firstGuideline.slug}`);
 }
+
+export const prerender = false;
 ---
 
 <Layout title="Redirecting to Guidelines...">
