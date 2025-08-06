@@ -249,6 +249,7 @@ const resources = rawEntries.map((entry) => {
 
           <!-- Table -->
           <div class="overflow-x-auto bg-white rounded-lg shadow">
+            <div id="filter-status" class="hidden my-2 text-sm text-primary font-bold"></div>
             <table class="resource-table w-full">
               <thead>
                 <tr>
@@ -318,38 +319,9 @@ const resources = rawEntries.map((entry) => {
                 
               </tbody>
             </table>
+            <!-- Pagination Controls -->
+            <div id="pagination" class="mt-6 flex justify-center gap-2"></div>
           </div>
-
-          <!-- Pagination -->
-          <!-- <div class="mt-6 flex justify-center">
-            <nav class="inline-flex rounded-md shadow">
-              <a
-                href="#"
-                class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-olive hover:bg-lightPurple"
-                >Previous</a
-              >
-              <a
-                href="#"
-                class="px-3 py-2 border-t border-b border-gray-300 bg-primary text-white"
-                >1</a
-              >
-              <a
-                href="#"
-                class="px-3 py-2 border-t border-b border-gray-300 bg-white text-olive hover:bg-lightPurple"
-                >2</a
-              >
-              <a
-                href="#"
-                class="px-3 py-2 border-t border-b border-gray-300 bg-white text-olive hover:bg-lightPurple"
-                >3</a
-              >
-              <a
-                href="#"
-                class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-olive hover:bg-lightPurple"
-                >Next</a
-              >
-            </nav>
-          </div> -->
         </div>
       </div>
     </section>
@@ -662,4 +634,6 @@ const resources = rawEntries.map((entry) => {
   </main>
 
   <Footer />
+  <script src="/scripts/resourceFilter.js" is:inline></script>
+
 </Layout>
