@@ -51,25 +51,51 @@ export async function getStaticPaths() {
           </a>
         </div>
 
-        <!-- Dropdown -->
-        <div class="max-w-md mx-auto flex justify-center gap-4">
-          <label for="guidelineSelect" class="block text-sm font-medium mb-2"
-            >Choose Article Type</label
+        <!-- Article Type Selector -->
+        <div class="max-w-2xl mx-auto">
+          <div
+            class="bg-white/95 backdrop-blur rounded-2xl shadow-2xl border border-primary/20 ring-1 ring-primary/10 p-6 md:p-8"
+            role="group"
+            aria-labelledby="article-type-heading"
           >
-          <select
-            id="guidelineSelect"
-            class="px-4 py-2 rounded-md text-gray-800 w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-            onchange="window.location.href = '/guidelines/' + this.value"
-          >
-            {
-              guidelines.map((g: any) => (
-                <option value={g.slug} selected={g.slug === slug}>
-                  {g.title}
-                </option>
-              ))
-            }
-          </select>
+            <div class="flex items-center gap-3 mb-4">
+              <h2 id="article-type-heading" class="text-xl md:text-2xl font-bold text-gray-900">
+                Choose your article type
+              </h2>
+            </div>
+
+            <div class="relative">
+              <!-- Chevron icon -->
+              <svg
+                class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+
+              <label for="guidelineSelect" class="sr-only">Article type</label>
+              <select
+                id="guidelineSelect"
+                class="w-full appearance-none text-base md:text-lg font-medium bg-white text-gray-900
+                      border-2 border-primary/30 rounded-xl px-4 md:px-5 pr-12 py-3 md:py-4
+                      shadow-sm focus:outline-none focus:ring-4 focus:ring-primary/30 focus:border-primary
+                      hover:border-primary transition"
+                onchange="window.location.href = '/guidelines/' + this.value"
+              >
+                {
+                  guidelines.map((g: any) => (
+                    <option value={g.slug} selected={g.slug === slug}>
+                      {g.title}
+                    </option>
+                  ))
+                }
+              </select>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
 
